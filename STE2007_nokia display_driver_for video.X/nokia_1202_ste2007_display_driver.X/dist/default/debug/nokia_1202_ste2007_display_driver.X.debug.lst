@@ -1,0 +1,3135 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Sun May 26 18:34:39 2024
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	16F876A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK1,global,class=CODE,delta=2
+     5                           	psect	stringtext,global,reloc=256,class=STRCODE,delta=2
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	dataBANK1,global,class=BANK1,space=1,delta=1
+     8                           	psect	inittext,global,class=CODE,delta=2
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2
+    14                           	psect	text3,local,class=CODE,merge=1,delta=2
+    15                           	psect	text4,local,class=CODE,merge=1,delta=2
+    16                           	psect	text5,local,class=CODE,merge=1,delta=2
+    17                           	psect	text6,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2
+    19                           	psect	text8,local,class=CODE,merge=1,delta=2,group=2
+    20                           	dabs	1,0x7E,2
+    21  0000                     
+    22                           ; Version 1.44
+    23                           ; Generated 14/09/2017 GMT
+    24                           ; 
+    25                           ; Copyright В© 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    26                           ; All rights reserved.
+    27                           ; 
+    28                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    29                           ; 
+    30                           ; Redistribution and use in source and binary forms, with or without modification, are
+    31                           ; permitted provided that the following conditions are met:
+    32                           ; 
+    33                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    34                           ;        conditions and the following disclaimer.
+    35                           ; 
+    36                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    37                           ;        of conditions and the following disclaimer in the documentation and/or other
+    38                           ;        materials provided with the distribution.
+    39                           ; 
+    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    41                           ;        software without specific prior written permission.
+    42                           ; 
+    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    51                           ; 
+    52                           ; 
+    53                           ; Code-generator required, PIC16F876A Definitions
+    54                           ; 
+    55                           ; SFR Addresses
+    56  0000                     	;# 
+    57  0001                     	;# 
+    58  0002                     	;# 
+    59  0003                     	;# 
+    60  0004                     	;# 
+    61  0005                     	;# 
+    62  0006                     	;# 
+    63  0007                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  000E                     	;# 
+    69  000E                     	;# 
+    70  000F                     	;# 
+    71  0010                     	;# 
+    72  0011                     	;# 
+    73  0012                     	;# 
+    74  0013                     	;# 
+    75  0014                     	;# 
+    76  0015                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001B                     	;# 
+    84  001B                     	;# 
+    85  001C                     	;# 
+    86  001D                     	;# 
+    87  001E                     	;# 
+    88  001F                     	;# 
+    89  0081                     	;# 
+    90  0085                     	;# 
+    91  0086                     	;# 
+    92  0087                     	;# 
+    93  008C                     	;# 
+    94  008D                     	;# 
+    95  008E                     	;# 
+    96  0091                     	;# 
+    97  0092                     	;# 
+    98  0093                     	;# 
+    99  0094                     	;# 
+   100  0098                     	;# 
+   101  0099                     	;# 
+   102  009C                     	;# 
+   103  009D                     	;# 
+   104  009E                     	;# 
+   105  009F                     	;# 
+   106  010C                     	;# 
+   107  010D                     	;# 
+   108  010E                     	;# 
+   109  010F                     	;# 
+   110  018C                     	;# 
+   111  018D                     	;# 
+   112  0000                     	;# 
+   113  0001                     	;# 
+   114  0002                     	;# 
+   115  0003                     	;# 
+   116  0004                     	;# 
+   117  0005                     	;# 
+   118  0006                     	;# 
+   119  0007                     	;# 
+   120  000A                     	;# 
+   121  000B                     	;# 
+   122  000C                     	;# 
+   123  000D                     	;# 
+   124  000E                     	;# 
+   125  000E                     	;# 
+   126  000F                     	;# 
+   127  0010                     	;# 
+   128  0011                     	;# 
+   129  0012                     	;# 
+   130  0013                     	;# 
+   131  0014                     	;# 
+   132  0015                     	;# 
+   133  0015                     	;# 
+   134  0016                     	;# 
+   135  0017                     	;# 
+   136  0018                     	;# 
+   137  0019                     	;# 
+   138  001A                     	;# 
+   139  001B                     	;# 
+   140  001B                     	;# 
+   141  001C                     	;# 
+   142  001D                     	;# 
+   143  001E                     	;# 
+   144  001F                     	;# 
+   145  0081                     	;# 
+   146  0085                     	;# 
+   147  0086                     	;# 
+   148  0087                     	;# 
+   149  008C                     	;# 
+   150  008D                     	;# 
+   151  008E                     	;# 
+   152  0091                     	;# 
+   153  0092                     	;# 
+   154  0093                     	;# 
+   155  0094                     	;# 
+   156  0098                     	;# 
+   157  0099                     	;# 
+   158  009C                     	;# 
+   159  009D                     	;# 
+   160  009E                     	;# 
+   161  009F                     	;# 
+   162  010C                     	;# 
+   163  010D                     	;# 
+   164  010E                     	;# 
+   165  010F                     	;# 
+   166  018C                     	;# 
+   167  018D                     	;# 
+   168                           
+   169                           	psect	idataBANK1
+   170  05F6                     __pidataBANK1:	
+   171                           
+   172                           ;initializer for ste2007_display_driver@F1029
+   173  05F6  34D2               	retlw	-46
+   174  05F7  34F0               	retlw	-16
+   175  05F8  34E5               	retlw	-27
+   176  05F9  34F2               	retlw	-14
+   177  05FA  34FC               	retlw	-4
+   178  05FB  34FF               	retlw	-1
+   179  05FC  3420               	retlw	32
+   180  05FD  34ED               	retlw	-19
+   181  05FE  34E0               	retlw	-32
+   182  05FF  34F5               	retlw	-11
+   183  0600  3420               	retlw	32
+   184  0601  34F1               	retlw	-15
+   185  0602  34F2               	retlw	-14
+   186  0603  34F0               	retlw	-16
+   187  0604  34EE               	retlw	-18
+   188  0605  34EA               	retlw	-22
+   189  0606  34E0               	retlw	-32
+   190  0607  3420               	retlw	32
+   191  0608  34ED               	retlw	-19
+   192  0609  34E0               	retlw	-32
+   193  060A  34F5               	retlw	-11
+   194  060B  340A               	retlw	10
+   195  060C  3400               	retlw	0
+   196                           
+   197                           ;initializer for ste2007_display_driver@F1023
+   198  060D  3420               	retlw	32
+   199  060E  3420               	retlw	32
+   200  060F  3420               	retlw	32
+   201  0610  3420               	retlw	32
+   202  0611  3420               	retlw	32
+   203  0612  3420               	retlw	32
+   204  0613  3420               	retlw	32
+   205  0614  3420               	retlw	32
+   206  0615  3420               	retlw	32
+   207  0616  3420               	retlw	32
+   208  0617  3420               	retlw	32
+   209  0618  3420               	retlw	32
+   210  0619  3420               	retlw	32
+   211  061A  3420               	retlw	32
+   212  061B  3420               	retlw	32
+   213  061C  3420               	retlw	32
+   214  061D  340A               	retlw	10
+   215                           
+   216                           ;initializer for ste2007_display_driver@F1027
+   217  061E  3453               	retlw	83
+   218  061F  3465               	retlw	101
+   219  0620  3463               	retlw	99
+   220  0621  346F               	retlw	111
+   221  0622  346E               	retlw	110
+   222  0623  3464               	retlw	100
+   223  0624  345F               	retlw	95
+   224  0625  346C               	retlw	108
+   225  0626  3469               	retlw	105
+   226  0627  346E               	retlw	110
+   227  0628  3465               	retlw	101
+   228  0629  340A               	retlw	10
+   229  062A  3400               	retlw	0
+   230                           
+   231                           ;initializer for ste2007_display_driver@F1025
+   232  062B  3446               	retlw	70
+   233  062C  3469               	retlw	105
+   234  062D  3472               	retlw	114
+   235  062E  3473               	retlw	115
+   236  062F  3474               	retlw	116
+   237  0630  345F               	retlw	95
+   238  0631  346C               	retlw	108
+   239  0632  3469               	retlw	105
+   240  0633  346E               	retlw	110
+   241  0634  3465               	retlw	101
+   242  0635  340A               	retlw	10
+   243  0636  3400               	retlw	0
+   244                           
+   245                           	psect	stringtext
+   246  0800                     __pstringtext:	
+   247  0800                     stringtab:	
+   248  0800                     __stringtab:	
+   249                           
+   250                           ;	String table - string pointers are 2 bytes each
+   251  0800  1BFF               	btfsc	btemp+1,7
+   252  0801  280A               	ljmp	stringcode
+   253  0802  1383               	bcf	3,7
+   254  0803  187F               	btfsc	btemp+1,0
+   255  0804  1783               	bsf	3,7
+   256  0805  0800               	movf	0,w
+   257  0806  0A84               	incf	4,f
+   258  0807  1903               	skipnz
+   259  0808  0AFF               	incf	btemp+1,f
+   260  0809  0008               	return
+   261  080A                     stringcode:	
+   262  080A  087F               	movf	btemp+1,w
+   263  080B  397F               	andlw	127
+   264  080C  008A               	movwf	10
+   265  080D  0804               	movf	4,w
+   266  080E  0A84               	incf	4,f
+   267  080F  1903               	skipnz
+   268  0810  0AFF               	incf	btemp+1,f
+   269  0811  0082               	movwf	2
+   270  0812                     __stringbase:	
+   271  0812                     __end_of__stringtab:	
+   272  0812                     _nlcd_Font:	
+   273  0812  3400               	retlw	0
+   274  0813  3400               	retlw	0
+   275  0814  3400               	retlw	0
+   276  0815  3400               	retlw	0
+   277  0816  3400               	retlw	0
+   278  0817  3400               	retlw	0
+   279  0818  3400               	retlw	0
+   280  0819  3400               	retlw	0
+   281  081A  3400               	retlw	0
+   282  081B  3400               	retlw	0
+   283  081C  3400               	retlw	0
+   284  081D  3400               	retlw	0
+   285  081E  3400               	retlw	0
+   286  081F  3400               	retlw	0
+   287  0820  3400               	retlw	0
+   288  0821  3400               	retlw	0
+   289  0822  3400               	retlw	0
+   290  0823  3400               	retlw	0
+   291  0824  3400               	retlw	0
+   292  0825  3400               	retlw	0
+   293  0826  3400               	retlw	0
+   294  0827  3400               	retlw	0
+   295  0828  3400               	retlw	0
+   296  0829  3400               	retlw	0
+   297  082A  3400               	retlw	0
+   298  082B  3400               	retlw	0
+   299  082C  3400               	retlw	0
+   300  082D  3400               	retlw	0
+   301  082E  3400               	retlw	0
+   302  082F  3400               	retlw	0
+   303  0830  347F               	retlw	127
+   304  0831  343F               	retlw	63
+   305  0832  341F               	retlw	31
+   306  0833  349F               	retlw	159
+   307  0834  349F               	retlw	159
+   308  0835  3400               	retlw	0
+   309  0836  3400               	retlw	0
+   310  0837  3400               	retlw	0
+   311  0838  3400               	retlw	0
+   312  0839  3400               	retlw	0
+   313  083A  3400               	retlw	0
+   314  083B  3400               	retlw	0
+   315  083C  3400               	retlw	0
+   316  083D  3400               	retlw	0
+   317  083E  3400               	retlw	0
+   318  083F  3400               	retlw	0
+   319  0840  3400               	retlw	0
+   320  0841  3400               	retlw	0
+   321  0842  3400               	retlw	0
+   322  0843  3400               	retlw	0
+   323  0844  3400               	retlw	0
+   324  0845  3400               	retlw	0
+   325  0846  3400               	retlw	0
+   326  0847  3400               	retlw	0
+   327  0848  3400               	retlw	0
+   328  0849  3400               	retlw	0
+   329  084A  3400               	retlw	0
+   330  084B  3400               	retlw	0
+   331  084C  3400               	retlw	0
+   332  084D  3400               	retlw	0
+   333  084E  3400               	retlw	0
+   334  084F  3400               	retlw	0
+   335  0850  3400               	retlw	0
+   336  0851  3400               	retlw	0
+   337  0852  3400               	retlw	0
+   338  0853  3400               	retlw	0
+   339  0854  3400               	retlw	0
+   340  0855  3400               	retlw	0
+   341  0856  3400               	retlw	0
+   342  0857  3400               	retlw	0
+   343  0858  3400               	retlw	0
+   344  0859  3400               	retlw	0
+   345  085A  3400               	retlw	0
+   346  085B  3400               	retlw	0
+   347  085C  3400               	retlw	0
+   348  085D  3400               	retlw	0
+   349  085E  3400               	retlw	0
+   350  085F  3400               	retlw	0
+   351  0860  3400               	retlw	0
+   352  0861  3400               	retlw	0
+   353  0862  3400               	retlw	0
+   354  0863  3400               	retlw	0
+   355  0864  3400               	retlw	0
+   356  0865  3400               	retlw	0
+   357  0866  3400               	retlw	0
+   358  0867  3400               	retlw	0
+   359  0868  3400               	retlw	0
+   360  0869  3400               	retlw	0
+   361  086A  3400               	retlw	0
+   362  086B  3400               	retlw	0
+   363  086C  3400               	retlw	0
+   364  086D  3400               	retlw	0
+   365  086E  3400               	retlw	0
+   366  086F  3400               	retlw	0
+   367  0870  3400               	retlw	0
+   368  0871  3400               	retlw	0
+   369  0872  3400               	retlw	0
+   370  0873  3400               	retlw	0
+   371  0874  3400               	retlw	0
+   372  0875  3400               	retlw	0
+   373  0876  3400               	retlw	0
+   374  0877  3400               	retlw	0
+   375  0878  3400               	retlw	0
+   376  0879  3400               	retlw	0
+   377  087A  3400               	retlw	0
+   378  087B  3400               	retlw	0
+   379  087C  3400               	retlw	0
+   380  087D  3400               	retlw	0
+   381  087E  3400               	retlw	0
+   382  087F  3400               	retlw	0
+   383  0880  3400               	retlw	0
+   384  0881  3400               	retlw	0
+   385  0882  3400               	retlw	0
+   386  0883  3400               	retlw	0
+   387  0884  3400               	retlw	0
+   388  0885  3400               	retlw	0
+   389  0886  3400               	retlw	0
+   390  0887  3400               	retlw	0
+   391  0888  3400               	retlw	0
+   392  0889  3400               	retlw	0
+   393  088A  3400               	retlw	0
+   394  088B  3400               	retlw	0
+   395  088C  3400               	retlw	0
+   396  088D  3400               	retlw	0
+   397  088E  3400               	retlw	0
+   398  088F  3400               	retlw	0
+   399  0890  3400               	retlw	0
+   400  0891  3400               	retlw	0
+   401  0892  3400               	retlw	0
+   402  0893  3400               	retlw	0
+   403  0894  3400               	retlw	0
+   404  0895  3400               	retlw	0
+   405  0896  3400               	retlw	0
+   406  0897  3400               	retlw	0
+   407  0898  3400               	retlw	0
+   408  0899  3400               	retlw	0
+   409  089A  3400               	retlw	0
+   410  089B  3400               	retlw	0
+   411  089C  3400               	retlw	0
+   412  089D  3400               	retlw	0
+   413  089E  3400               	retlw	0
+   414  089F  3400               	retlw	0
+   415  08A0  3400               	retlw	0
+   416  08A1  3400               	retlw	0
+   417  08A2  3400               	retlw	0
+   418  08A3  3400               	retlw	0
+   419  08A4  3400               	retlw	0
+   420  08A5  3400               	retlw	0
+   421  08A6  3400               	retlw	0
+   422  08A7  3400               	retlw	0
+   423  08A8  3400               	retlw	0
+   424  08A9  3400               	retlw	0
+   425  08AA  3400               	retlw	0
+   426  08AB  3400               	retlw	0
+   427  08AC  3400               	retlw	0
+   428  08AD  3400               	retlw	0
+   429  08AE  3400               	retlw	0
+   430  08AF  3400               	retlw	0
+   431  08B0  3400               	retlw	0
+   432  08B1  3400               	retlw	0
+   433  08B2  3400               	retlw	0
+   434  08B3  3400               	retlw	0
+   435  08B4  3400               	retlw	0
+   436  08B5  3400               	retlw	0
+   437  08B6  3400               	retlw	0
+   438  08B7  3400               	retlw	0
+   439  08B8  3400               	retlw	0
+   440  08B9  345F               	retlw	95
+   441  08BA  3400               	retlw	0
+   442  08BB  3400               	retlw	0
+   443  08BC  3400               	retlw	0
+   444  08BD  3407               	retlw	7
+   445  08BE  3400               	retlw	0
+   446  08BF  3407               	retlw	7
+   447  08C0  3400               	retlw	0
+   448  08C1  3414               	retlw	20
+   449  08C2  347F               	retlw	127
+   450  08C3  3414               	retlw	20
+   451  08C4  347F               	retlw	127
+   452  08C5  3414               	retlw	20
+   453  08C6  3424               	retlw	36
+   454  08C7  342A               	retlw	42
+   455  08C8  347F               	retlw	127
+   456  08C9  342A               	retlw	42
+   457  08CA  3412               	retlw	18
+   458  08CB  3423               	retlw	35
+   459  08CC  3413               	retlw	19
+   460  08CD  3408               	retlw	8
+   461  08CE  3464               	retlw	100
+   462  08CF  3462               	retlw	98
+   463  08D0  3436               	retlw	54
+   464  08D1  3449               	retlw	73
+   465  08D2  3455               	retlw	85
+   466  08D3  3422               	retlw	34
+   467  08D4  3450               	retlw	80
+   468  08D5  3400               	retlw	0
+   469  08D6  3405               	retlw	5
+   470  08D7  3403               	retlw	3
+   471  08D8  3400               	retlw	0
+   472  08D9  3400               	retlw	0
+   473  08DA  3400               	retlw	0
+   474  08DB  341C               	retlw	28
+   475  08DC  3422               	retlw	34
+   476  08DD  3441               	retlw	65
+   477  08DE  3400               	retlw	0
+   478  08DF  3400               	retlw	0
+   479  08E0  3441               	retlw	65
+   480  08E1  3422               	retlw	34
+   481  08E2  341C               	retlw	28
+   482  08E3  3400               	retlw	0
+   483  08E4  3408               	retlw	8
+   484  08E5  342A               	retlw	42
+   485  08E6  341C               	retlw	28
+   486  08E7  342A               	retlw	42
+   487  08E8  3408               	retlw	8
+   488  08E9  3408               	retlw	8
+   489  08EA  3408               	retlw	8
+   490  08EB  343E               	retlw	62
+   491  08EC  3408               	retlw	8
+   492  08ED  3408               	retlw	8
+   493  08EE  3400               	retlw	0
+   494  08EF  3450               	retlw	80
+   495  08F0  3430               	retlw	48
+   496  08F1  3400               	retlw	0
+   497  08F2  3400               	retlw	0
+   498  08F3  3408               	retlw	8
+   499  08F4  3408               	retlw	8
+   500  08F5  3408               	retlw	8
+   501  08F6  3408               	retlw	8
+   502  08F7  3408               	retlw	8
+   503  08F8  3400               	retlw	0
+   504  08F9  3430               	retlw	48
+   505  08FA  3430               	retlw	48
+   506  08FB  3400               	retlw	0
+   507  08FC  3400               	retlw	0
+   508  08FD  3420               	retlw	32
+   509  08FE  3410               	retlw	16
+   510  08FF  3408               	retlw	8
+   511  0900  3404               	retlw	4
+   512  0901  3402               	retlw	2
+   513  0902  343E               	retlw	62
+   514  0903  3451               	retlw	81
+   515  0904  3449               	retlw	73
+   516  0905  3445               	retlw	69
+   517  0906  343E               	retlw	62
+   518  0907  3400               	retlw	0
+   519  0908  3442               	retlw	66
+   520  0909  347F               	retlw	127
+   521  090A  3440               	retlw	64
+   522  090B  3400               	retlw	0
+   523  090C  3442               	retlw	66
+   524  090D  3461               	retlw	97
+   525  090E  3451               	retlw	81
+   526  090F  3449               	retlw	73
+   527  0910  3446               	retlw	70
+   528  0911  3421               	retlw	33
+   529  0912  3441               	retlw	65
+   530  0913  3445               	retlw	69
+   531  0914  344B               	retlw	75
+   532  0915  3431               	retlw	49
+   533  0916  3418               	retlw	24
+   534  0917  3414               	retlw	20
+   535  0918  3412               	retlw	18
+   536  0919  347F               	retlw	127
+   537  091A  3410               	retlw	16
+   538  091B  3427               	retlw	39
+   539  091C  3445               	retlw	69
+   540  091D  3445               	retlw	69
+   541  091E  3445               	retlw	69
+   542  091F  3439               	retlw	57
+   543  0920  343C               	retlw	60
+   544  0921  344A               	retlw	74
+   545  0922  3449               	retlw	73
+   546  0923  3449               	retlw	73
+   547  0924  3430               	retlw	48
+   548  0925  3401               	retlw	1
+   549  0926  3471               	retlw	113
+   550  0927  3409               	retlw	9
+   551  0928  3405               	retlw	5
+   552  0929  3403               	retlw	3
+   553  092A  3436               	retlw	54
+   554  092B  3449               	retlw	73
+   555  092C  3449               	retlw	73
+   556  092D  3449               	retlw	73
+   557  092E  3436               	retlw	54
+   558  092F  3406               	retlw	6
+   559  0930  3449               	retlw	73
+   560  0931  3449               	retlw	73
+   561  0932  3429               	retlw	41
+   562  0933  341E               	retlw	30
+   563  0934  3400               	retlw	0
+   564  0935  3436               	retlw	54
+   565  0936  3436               	retlw	54
+   566  0937  3400               	retlw	0
+   567  0938  3400               	retlw	0
+   568  0939  3400               	retlw	0
+   569  093A  3456               	retlw	86
+   570  093B  3436               	retlw	54
+   571  093C  3400               	retlw	0
+   572  093D  3400               	retlw	0
+   573  093E  3400               	retlw	0
+   574  093F  3408               	retlw	8
+   575  0940  3414               	retlw	20
+   576  0941  3422               	retlw	34
+   577  0942  3441               	retlw	65
+   578  0943  3414               	retlw	20
+   579  0944  3414               	retlw	20
+   580  0945  3414               	retlw	20
+   581  0946  3414               	retlw	20
+   582  0947  3414               	retlw	20
+   583  0948  3441               	retlw	65
+   584  0949  3422               	retlw	34
+   585  094A  3414               	retlw	20
+   586  094B  3408               	retlw	8
+   587  094C  3400               	retlw	0
+   588  094D  3402               	retlw	2
+   589  094E  3401               	retlw	1
+   590  094F  3451               	retlw	81
+   591  0950  3409               	retlw	9
+   592  0951  3406               	retlw	6
+   593  0952  3432               	retlw	50
+   594  0953  3449               	retlw	73
+   595  0954  3479               	retlw	121
+   596  0955  3441               	retlw	65
+   597  0956  343E               	retlw	62
+   598  0957  347E               	retlw	126
+   599  0958  3411               	retlw	17
+   600  0959  3411               	retlw	17
+   601  095A  3411               	retlw	17
+   602  095B  347E               	retlw	126
+   603  095C  347F               	retlw	127
+   604  095D  3449               	retlw	73
+   605  095E  3449               	retlw	73
+   606  095F  3449               	retlw	73
+   607  0960  3436               	retlw	54
+   608  0961  343E               	retlw	62
+   609  0962  3441               	retlw	65
+   610  0963  3441               	retlw	65
+   611  0964  3441               	retlw	65
+   612  0965  3422               	retlw	34
+   613  0966  347F               	retlw	127
+   614  0967  3441               	retlw	65
+   615  0968  3441               	retlw	65
+   616  0969  3422               	retlw	34
+   617  096A  341C               	retlw	28
+   618  096B  347F               	retlw	127
+   619  096C  3449               	retlw	73
+   620  096D  3449               	retlw	73
+   621  096E  3449               	retlw	73
+   622  096F  3441               	retlw	65
+   623  0970  347F               	retlw	127
+   624  0971  3409               	retlw	9
+   625  0972  3409               	retlw	9
+   626  0973  3401               	retlw	1
+   627  0974  3401               	retlw	1
+   628  0975  343E               	retlw	62
+   629  0976  3441               	retlw	65
+   630  0977  3441               	retlw	65
+   631  0978  3451               	retlw	81
+   632  0979  3432               	retlw	50
+   633  097A  347F               	retlw	127
+   634  097B  3408               	retlw	8
+   635  097C  3408               	retlw	8
+   636  097D  3408               	retlw	8
+   637  097E  347F               	retlw	127
+   638  097F  3400               	retlw	0
+   639  0980  3441               	retlw	65
+   640  0981  347F               	retlw	127
+   641  0982  3441               	retlw	65
+   642  0983  3400               	retlw	0
+   643  0984  3420               	retlw	32
+   644  0985  3440               	retlw	64
+   645  0986  3441               	retlw	65
+   646  0987  343F               	retlw	63
+   647  0988  3401               	retlw	1
+   648  0989  347F               	retlw	127
+   649  098A  3408               	retlw	8
+   650  098B  3414               	retlw	20
+   651  098C  3422               	retlw	34
+   652  098D  3441               	retlw	65
+   653  098E  347F               	retlw	127
+   654  098F  3440               	retlw	64
+   655  0990  3440               	retlw	64
+   656  0991  3440               	retlw	64
+   657  0992  3440               	retlw	64
+   658  0993  347F               	retlw	127
+   659  0994  3402               	retlw	2
+   660  0995  3404               	retlw	4
+   661  0996  3402               	retlw	2
+   662  0997  347F               	retlw	127
+   663  0998  347F               	retlw	127
+   664  0999  3404               	retlw	4
+   665  099A  3408               	retlw	8
+   666  099B  3410               	retlw	16
+   667  099C  347F               	retlw	127
+   668  099D  343E               	retlw	62
+   669  099E  3441               	retlw	65
+   670  099F  3441               	retlw	65
+   671  09A0  3441               	retlw	65
+   672  09A1  343E               	retlw	62
+   673  09A2  347F               	retlw	127
+   674  09A3  3409               	retlw	9
+   675  09A4  3409               	retlw	9
+   676  09A5  3409               	retlw	9
+   677  09A6  3406               	retlw	6
+   678  09A7  343E               	retlw	62
+   679  09A8  3441               	retlw	65
+   680  09A9  3451               	retlw	81
+   681  09AA  3421               	retlw	33
+   682  09AB  345E               	retlw	94
+   683  09AC  347F               	retlw	127
+   684  09AD  3409               	retlw	9
+   685  09AE  3419               	retlw	25
+   686  09AF  3429               	retlw	41
+   687  09B0  3446               	retlw	70
+   688  09B1  3446               	retlw	70
+   689  09B2  3449               	retlw	73
+   690  09B3  3449               	retlw	73
+   691  09B4  3449               	retlw	73
+   692  09B5  3431               	retlw	49
+   693  09B6  3401               	retlw	1
+   694  09B7  3401               	retlw	1
+   695  09B8  347F               	retlw	127
+   696  09B9  3401               	retlw	1
+   697  09BA  3401               	retlw	1
+   698  09BB  343F               	retlw	63
+   699  09BC  3440               	retlw	64
+   700  09BD  3440               	retlw	64
+   701  09BE  3440               	retlw	64
+   702  09BF  343F               	retlw	63
+   703  09C0  341F               	retlw	31
+   704  09C1  3420               	retlw	32
+   705  09C2  3440               	retlw	64
+   706  09C3  3420               	retlw	32
+   707  09C4  341F               	retlw	31
+   708  09C5  347F               	retlw	127
+   709  09C6  3420               	retlw	32
+   710  09C7  3418               	retlw	24
+   711  09C8  3420               	retlw	32
+   712  09C9  347F               	retlw	127
+   713  09CA  3463               	retlw	99
+   714  09CB  3414               	retlw	20
+   715  09CC  3408               	retlw	8
+   716  09CD  3414               	retlw	20
+   717  09CE  3463               	retlw	99
+   718  09CF  3403               	retlw	3
+   719  09D0  3404               	retlw	4
+   720  09D1  3478               	retlw	120
+   721  09D2  3404               	retlw	4
+   722  09D3  3403               	retlw	3
+   723  09D4  3461               	retlw	97
+   724  09D5  3451               	retlw	81
+   725  09D6  3449               	retlw	73
+   726  09D7  3445               	retlw	69
+   727  09D8  3443               	retlw	67
+   728  09D9  3400               	retlw	0
+   729  09DA  3400               	retlw	0
+   730  09DB  3400               	retlw	0
+   731  09DC  3400               	retlw	0
+   732  09DD  3400               	retlw	0
+   733  09DE  3402               	retlw	2
+   734  09DF  3404               	retlw	4
+   735  09E0  3408               	retlw	8
+   736  09E1  3410               	retlw	16
+   737  09E2  3420               	retlw	32
+   738  09E3  3400               	retlw	0
+   739  09E4  3400               	retlw	0
+   740  09E5  3400               	retlw	0
+   741  09E6  3400               	retlw	0
+   742  09E7  3400               	retlw	0
+   743  09E8  3404               	retlw	4
+   744  09E9  3402               	retlw	2
+   745  09EA  3401               	retlw	1
+   746  09EB  3402               	retlw	2
+   747  09EC  3404               	retlw	4
+   748  09ED  3440               	retlw	64
+   749  09EE  3440               	retlw	64
+   750  09EF  3440               	retlw	64
+   751  09F0  3440               	retlw	64
+   752  09F1  3440               	retlw	64
+   753  09F2  3400               	retlw	0
+   754  09F3  3401               	retlw	1
+   755  09F4  3402               	retlw	2
+   756  09F5  3404               	retlw	4
+   757  09F6  3400               	retlw	0
+   758  09F7  3420               	retlw	32
+   759  09F8  3454               	retlw	84
+   760  09F9  3454               	retlw	84
+   761  09FA  3454               	retlw	84
+   762  09FB  3478               	retlw	120
+   763  09FC  347F               	retlw	127
+   764  09FD  3448               	retlw	72
+   765  09FE  3444               	retlw	68
+   766  09FF  3444               	retlw	68
+   767  0A00  3438               	retlw	56
+   768  0A01  3438               	retlw	56
+   769  0A02  3444               	retlw	68
+   770  0A03  3444               	retlw	68
+   771  0A04  3444               	retlw	68
+   772  0A05  3420               	retlw	32
+   773  0A06  3438               	retlw	56
+   774  0A07  3444               	retlw	68
+   775  0A08  3444               	retlw	68
+   776  0A09  3448               	retlw	72
+   777  0A0A  347F               	retlw	127
+   778  0A0B  3438               	retlw	56
+   779  0A0C  3454               	retlw	84
+   780  0A0D  3454               	retlw	84
+   781  0A0E  3454               	retlw	84
+   782  0A0F  3418               	retlw	24
+   783  0A10  3408               	retlw	8
+   784  0A11  347E               	retlw	126
+   785  0A12  3409               	retlw	9
+   786  0A13  3401               	retlw	1
+   787  0A14  3402               	retlw	2
+   788  0A15  3408               	retlw	8
+   789  0A16  3414               	retlw	20
+   790  0A17  3454               	retlw	84
+   791  0A18  3454               	retlw	84
+   792  0A19  343C               	retlw	60
+   793  0A1A  347F               	retlw	127
+   794  0A1B  3408               	retlw	8
+   795  0A1C  3404               	retlw	4
+   796  0A1D  3404               	retlw	4
+   797  0A1E  3478               	retlw	120
+   798  0A1F  3400               	retlw	0
+   799  0A20  3444               	retlw	68
+   800  0A21  347D               	retlw	125
+   801  0A22  3440               	retlw	64
+   802  0A23  3400               	retlw	0
+   803  0A24  3420               	retlw	32
+   804  0A25  3440               	retlw	64
+   805  0A26  3444               	retlw	68
+   806  0A27  343D               	retlw	61
+   807  0A28  3400               	retlw	0
+   808  0A29  3400               	retlw	0
+   809  0A2A  347F               	retlw	127
+   810  0A2B  3410               	retlw	16
+   811  0A2C  3428               	retlw	40
+   812  0A2D  3444               	retlw	68
+   813  0A2E  3400               	retlw	0
+   814  0A2F  3441               	retlw	65
+   815  0A30  347F               	retlw	127
+   816  0A31  3440               	retlw	64
+   817  0A32  3400               	retlw	0
+   818  0A33  347C               	retlw	124
+   819  0A34  3404               	retlw	4
+   820  0A35  3418               	retlw	24
+   821  0A36  3404               	retlw	4
+   822  0A37  3478               	retlw	120
+   823  0A38  347C               	retlw	124
+   824  0A39  3408               	retlw	8
+   825  0A3A  3404               	retlw	4
+   826  0A3B  3404               	retlw	4
+   827  0A3C  3478               	retlw	120
+   828  0A3D  3438               	retlw	56
+   829  0A3E  3444               	retlw	68
+   830  0A3F  3444               	retlw	68
+   831  0A40  3444               	retlw	68
+   832  0A41  3438               	retlw	56
+   833  0A42  347C               	retlw	124
+   834  0A43  3414               	retlw	20
+   835  0A44  3414               	retlw	20
+   836  0A45  3414               	retlw	20
+   837  0A46  3408               	retlw	8
+   838  0A47  3408               	retlw	8
+   839  0A48  3414               	retlw	20
+   840  0A49  3414               	retlw	20
+   841  0A4A  3418               	retlw	24
+   842  0A4B  347C               	retlw	124
+   843  0A4C  347C               	retlw	124
+   844  0A4D  3408               	retlw	8
+   845  0A4E  3404               	retlw	4
+   846  0A4F  3404               	retlw	4
+   847  0A50  3408               	retlw	8
+   848  0A51  3448               	retlw	72
+   849  0A52  3454               	retlw	84
+   850  0A53  3454               	retlw	84
+   851  0A54  3454               	retlw	84
+   852  0A55  3420               	retlw	32
+   853  0A56  3404               	retlw	4
+   854  0A57  343F               	retlw	63
+   855  0A58  3444               	retlw	68
+   856  0A59  3440               	retlw	64
+   857  0A5A  3420               	retlw	32
+   858  0A5B  343C               	retlw	60
+   859  0A5C  3440               	retlw	64
+   860  0A5D  3440               	retlw	64
+   861  0A5E  3420               	retlw	32
+   862  0A5F  347C               	retlw	124
+   863  0A60  341C               	retlw	28
+   864  0A61  3420               	retlw	32
+   865  0A62  3440               	retlw	64
+   866  0A63  3420               	retlw	32
+   867  0A64  341C               	retlw	28
+   868  0A65  343C               	retlw	60
+   869  0A66  3440               	retlw	64
+   870  0A67  3430               	retlw	48
+   871  0A68  3440               	retlw	64
+   872  0A69  343C               	retlw	60
+   873  0A6A  3444               	retlw	68
+   874  0A6B  3428               	retlw	40
+   875  0A6C  3410               	retlw	16
+   876  0A6D  3428               	retlw	40
+   877  0A6E  3444               	retlw	68
+   878  0A6F  340C               	retlw	12
+   879  0A70  3450               	retlw	80
+   880  0A71  3450               	retlw	80
+   881  0A72  3450               	retlw	80
+   882  0A73  343C               	retlw	60
+   883  0A74  3444               	retlw	68
+   884  0A75  3464               	retlw	100
+   885  0A76  3454               	retlw	84
+   886  0A77  344C               	retlw	76
+   887  0A78  3444               	retlw	68
+   888  0A79  3400               	retlw	0
+   889  0A7A  3408               	retlw	8
+   890  0A7B  3436               	retlw	54
+   891  0A7C  3441               	retlw	65
+   892  0A7D  3400               	retlw	0
+   893  0A7E  3400               	retlw	0
+   894  0A7F  3400               	retlw	0
+   895  0A80  347F               	retlw	127
+   896  0A81  3400               	retlw	0
+   897  0A82  3400               	retlw	0
+   898  0A83  3400               	retlw	0
+   899  0A84  3441               	retlw	65
+   900  0A85  3436               	retlw	54
+   901  0A86  3408               	retlw	8
+   902  0A87  3400               	retlw	0
+   903  0A88  3402               	retlw	2
+   904  0A89  3401               	retlw	1
+   905  0A8A  3402               	retlw	2
+   906  0A8B  3404               	retlw	4
+   907  0A8C  3402               	retlw	2
+   908  0A8D  3400               	retlw	0
+   909  0A8E  3400               	retlw	0
+   910  0A8F  3400               	retlw	0
+   911  0A90  3400               	retlw	0
+   912  0A91  3400               	retlw	0
+   913  0A92  3400               	retlw	0
+   914  0A93  3400               	retlw	0
+   915  0A94  3400               	retlw	0
+   916  0A95  3400               	retlw	0
+   917  0A96  3400               	retlw	0
+   918  0A97  3400               	retlw	0
+   919  0A98  3400               	retlw	0
+   920  0A99  3400               	retlw	0
+   921  0A9A  3400               	retlw	0
+   922  0A9B  3400               	retlw	0
+   923  0A9C  3400               	retlw	0
+   924  0A9D  3400               	retlw	0
+   925  0A9E  3400               	retlw	0
+   926  0A9F  3400               	retlw	0
+   927  0AA0  3400               	retlw	0
+   928  0AA1  3400               	retlw	0
+   929  0AA2  3400               	retlw	0
+   930  0AA3  3400               	retlw	0
+   931  0AA4  3400               	retlw	0
+   932  0AA5  3400               	retlw	0
+   933  0AA6  3400               	retlw	0
+   934  0AA7  3400               	retlw	0
+   935  0AA8  3400               	retlw	0
+   936  0AA9  3400               	retlw	0
+   937  0AAA  3400               	retlw	0
+   938  0AAB  3400               	retlw	0
+   939  0AAC  3400               	retlw	0
+   940  0AAD  3400               	retlw	0
+   941  0AAE  3400               	retlw	0
+   942  0AAF  3400               	retlw	0
+   943  0AB0  3400               	retlw	0
+   944  0AB1  3400               	retlw	0
+   945  0AB2  3400               	retlw	0
+   946  0AB3  3400               	retlw	0
+   947  0AB4  3400               	retlw	0
+   948  0AB5  3400               	retlw	0
+   949  0AB6  3400               	retlw	0
+   950  0AB7  3400               	retlw	0
+   951  0AB8  3400               	retlw	0
+   952  0AB9  3400               	retlw	0
+   953  0ABA  3400               	retlw	0
+   954  0ABB  3400               	retlw	0
+   955  0ABC  3400               	retlw	0
+   956  0ABD  3400               	retlw	0
+   957  0ABE  3400               	retlw	0
+   958  0ABF  3400               	retlw	0
+   959  0AC0  3400               	retlw	0
+   960  0AC1  3400               	retlw	0
+   961  0AC2  3400               	retlw	0
+   962  0AC3  3400               	retlw	0
+   963  0AC4  3400               	retlw	0
+   964  0AC5  3400               	retlw	0
+   965  0AC6  3400               	retlw	0
+   966  0AC7  3400               	retlw	0
+   967  0AC8  3400               	retlw	0
+   968  0AC9  3400               	retlw	0
+   969  0ACA  3400               	retlw	0
+   970  0ACB  3400               	retlw	0
+   971  0ACC  3400               	retlw	0
+   972  0ACD  3400               	retlw	0
+   973  0ACE  3400               	retlw	0
+   974  0ACF  3400               	retlw	0
+   975  0AD0  3400               	retlw	0
+   976  0AD1  3400               	retlw	0
+   977  0AD2  3400               	retlw	0
+   978  0AD3  3400               	retlw	0
+   979  0AD4  3400               	retlw	0
+   980  0AD5  3400               	retlw	0
+   981  0AD6  3400               	retlw	0
+   982  0AD7  3400               	retlw	0
+   983  0AD8  3400               	retlw	0
+   984  0AD9  3400               	retlw	0
+   985  0ADA  3400               	retlw	0
+   986  0ADB  3400               	retlw	0
+   987  0ADC  3400               	retlw	0
+   988  0ADD  3400               	retlw	0
+   989  0ADE  3400               	retlw	0
+   990  0ADF  3400               	retlw	0
+   991  0AE0  3400               	retlw	0
+   992  0AE1  3400               	retlw	0
+   993  0AE2  3400               	retlw	0
+   994  0AE3  3400               	retlw	0
+   995  0AE4  3400               	retlw	0
+   996  0AE5  3400               	retlw	0
+   997  0AE6  3400               	retlw	0
+   998  0AE7  3400               	retlw	0
+   999  0AE8  3400               	retlw	0
+  1000  0AE9  3400               	retlw	0
+  1001  0AEA  3400               	retlw	0
+  1002  0AEB  3400               	retlw	0
+  1003  0AEC  3400               	retlw	0
+  1004  0AED  3400               	retlw	0
+  1005  0AEE  3400               	retlw	0
+  1006  0AEF  3400               	retlw	0
+  1007  0AF0  3400               	retlw	0
+  1008  0AF1  3400               	retlw	0
+  1009  0AF2  3400               	retlw	0
+  1010  0AF3  3400               	retlw	0
+  1011  0AF4  3400               	retlw	0
+  1012  0AF5  3400               	retlw	0
+  1013  0AF6  3400               	retlw	0
+  1014  0AF7  3400               	retlw	0
+  1015  0AF8  3400               	retlw	0
+  1016  0AF9  3400               	retlw	0
+  1017  0AFA  3400               	retlw	0
+  1018  0AFB  3400               	retlw	0
+  1019  0AFC  3400               	retlw	0
+  1020  0AFD  3400               	retlw	0
+  1021  0AFE  3400               	retlw	0
+  1022  0AFF  3400               	retlw	0
+  1023  0B00  3400               	retlw	0
+  1024  0B01  3400               	retlw	0
+  1025  0B02  3400               	retlw	0
+  1026  0B03  3400               	retlw	0
+  1027  0B04  3400               	retlw	0
+  1028  0B05  3400               	retlw	0
+  1029  0B06  3400               	retlw	0
+  1030  0B07  3400               	retlw	0
+  1031  0B08  3400               	retlw	0
+  1032  0B09  3400               	retlw	0
+  1033  0B0A  3400               	retlw	0
+  1034  0B0B  3400               	retlw	0
+  1035  0B0C  3400               	retlw	0
+  1036  0B0D  3400               	retlw	0
+  1037  0B0E  3400               	retlw	0
+  1038  0B0F  3400               	retlw	0
+  1039  0B10  3400               	retlw	0
+  1040  0B11  3400               	retlw	0
+  1041  0B12  3400               	retlw	0
+  1042  0B13  3400               	retlw	0
+  1043  0B14  3400               	retlw	0
+  1044  0B15  3400               	retlw	0
+  1045  0B16  3400               	retlw	0
+  1046  0B17  3400               	retlw	0
+  1047  0B18  3400               	retlw	0
+  1048  0B19  3400               	retlw	0
+  1049  0B1A  3400               	retlw	0
+  1050  0B1B  3400               	retlw	0
+  1051  0B1C  3400               	retlw	0
+  1052  0B1D  3400               	retlw	0
+  1053  0B1E  3400               	retlw	0
+  1054  0B1F  3400               	retlw	0
+  1055  0B20  3400               	retlw	0
+  1056  0B21  3400               	retlw	0
+  1057  0B22  3400               	retlw	0
+  1058  0B23  3400               	retlw	0
+  1059  0B24  3400               	retlw	0
+  1060  0B25  3400               	retlw	0
+  1061  0B26  3400               	retlw	0
+  1062  0B27  3400               	retlw	0
+  1063  0B28  3400               	retlw	0
+  1064  0B29  3400               	retlw	0
+  1065  0B2A  3400               	retlw	0
+  1066  0B2B  3400               	retlw	0
+  1067  0B2C  3400               	retlw	0
+  1068  0B2D  3400               	retlw	0
+  1069  0B2E  3400               	retlw	0
+  1070  0B2F  3400               	retlw	0
+  1071  0B30  3400               	retlw	0
+  1072  0B31  3400               	retlw	0
+  1073  0B32  3400               	retlw	0
+  1074  0B33  3400               	retlw	0
+  1075  0B34  3400               	retlw	0
+  1076  0B35  3400               	retlw	0
+  1077  0B36  3400               	retlw	0
+  1078  0B37  3400               	retlw	0
+  1079  0B38  3400               	retlw	0
+  1080  0B39  3400               	retlw	0
+  1081  0B3A  3400               	retlw	0
+  1082  0B3B  3400               	retlw	0
+  1083  0B3C  3400               	retlw	0
+  1084  0B3D  3400               	retlw	0
+  1085  0B3E  3400               	retlw	0
+  1086  0B3F  3400               	retlw	0
+  1087  0B40  3400               	retlw	0
+  1088  0B41  3400               	retlw	0
+  1089  0B42  3400               	retlw	0
+  1090  0B43  3400               	retlw	0
+  1091  0B44  3400               	retlw	0
+  1092  0B45  3400               	retlw	0
+  1093  0B46  3400               	retlw	0
+  1094  0B47  3400               	retlw	0
+  1095  0B48  3400               	retlw	0
+  1096  0B49  3400               	retlw	0
+  1097  0B4A  3400               	retlw	0
+  1098  0B4B  3400               	retlw	0
+  1099  0B4C  3400               	retlw	0
+  1100  0B4D  3400               	retlw	0
+  1101  0B4E  3400               	retlw	0
+  1102  0B4F  3400               	retlw	0
+  1103  0B50  3400               	retlw	0
+  1104  0B51  3400               	retlw	0
+  1105  0B52  3400               	retlw	0
+  1106  0B53  3400               	retlw	0
+  1107  0B54  3400               	retlw	0
+  1108  0B55  3400               	retlw	0
+  1109  0B56  3400               	retlw	0
+  1110  0B57  3400               	retlw	0
+  1111  0B58  3400               	retlw	0
+  1112  0B59  3400               	retlw	0
+  1113  0B5A  3400               	retlw	0
+  1114  0B5B  3400               	retlw	0
+  1115  0B5C  3400               	retlw	0
+  1116  0B5D  3400               	retlw	0
+  1117  0B5E  3400               	retlw	0
+  1118  0B5F  3400               	retlw	0
+  1119  0B60  3400               	retlw	0
+  1120  0B61  3400               	retlw	0
+  1121  0B62  3400               	retlw	0
+  1122  0B63  3400               	retlw	0
+  1123  0B64  3400               	retlw	0
+  1124  0B65  3400               	retlw	0
+  1125  0B66  3400               	retlw	0
+  1126  0B67  3400               	retlw	0
+  1127  0B68  3400               	retlw	0
+  1128  0B69  3400               	retlw	0
+  1129  0B6A  3400               	retlw	0
+  1130  0B6B  3400               	retlw	0
+  1131  0B6C  3400               	retlw	0
+  1132  0B6D  3400               	retlw	0
+  1133  0B6E  3400               	retlw	0
+  1134  0B6F  3400               	retlw	0
+  1135  0B70  3400               	retlw	0
+  1136  0B71  3400               	retlw	0
+  1137  0B72  3400               	retlw	0
+  1138  0B73  3400               	retlw	0
+  1139  0B74  3400               	retlw	0
+  1140  0B75  3400               	retlw	0
+  1141  0B76  3400               	retlw	0
+  1142  0B77  3400               	retlw	0
+  1143  0B78  3400               	retlw	0
+  1144  0B79  3400               	retlw	0
+  1145  0B7A  3400               	retlw	0
+  1146  0B7B  3400               	retlw	0
+  1147  0B7C  3400               	retlw	0
+  1148  0B7D  3400               	retlw	0
+  1149  0B7E  3400               	retlw	0
+  1150  0B7F  3400               	retlw	0
+  1151  0B80  3400               	retlw	0
+  1152  0B81  3400               	retlw	0
+  1153  0B82  3400               	retlw	0
+  1154  0B83  3400               	retlw	0
+  1155  0B84  3400               	retlw	0
+  1156  0B85  3400               	retlw	0
+  1157  0B86  3400               	retlw	0
+  1158  0B87  3400               	retlw	0
+  1159  0B88  3400               	retlw	0
+  1160  0B89  3400               	retlw	0
+  1161  0B8A  3400               	retlw	0
+  1162  0B8B  3400               	retlw	0
+  1163  0B8C  3400               	retlw	0
+  1164  0B8D  3400               	retlw	0
+  1165  0B8E  3400               	retlw	0
+  1166  0B8F  3400               	retlw	0
+  1167  0B90  3400               	retlw	0
+  1168  0B91  3400               	retlw	0
+  1169  0B92  3400               	retlw	0
+  1170  0B93  3400               	retlw	0
+  1171  0B94  3400               	retlw	0
+  1172  0B95  3400               	retlw	0
+  1173  0B96  3400               	retlw	0
+  1174  0B97  3400               	retlw	0
+  1175  0B98  3400               	retlw	0
+  1176  0B99  3400               	retlw	0
+  1177  0B9A  3400               	retlw	0
+  1178  0B9B  3400               	retlw	0
+  1179  0B9C  3400               	retlw	0
+  1180  0B9D  3400               	retlw	0
+  1181  0B9E  3400               	retlw	0
+  1182  0B9F  3400               	retlw	0
+  1183  0BA0  3400               	retlw	0
+  1184  0BA1  3400               	retlw	0
+  1185  0BA2  3400               	retlw	0
+  1186  0BA3  3400               	retlw	0
+  1187  0BA4  3400               	retlw	0
+  1188  0BA5  3400               	retlw	0
+  1189  0BA6  3400               	retlw	0
+  1190  0BA7  3400               	retlw	0
+  1191  0BA8  3400               	retlw	0
+  1192  0BA9  3400               	retlw	0
+  1193  0BAA  3438               	retlw	56
+  1194  0BAB  3455               	retlw	85
+  1195  0BAC  3454               	retlw	84
+  1196  0BAD  3455               	retlw	85
+  1197  0BAE  3408               	retlw	8
+  1198  0BAF  3400               	retlw	0
+  1199  0BB0  3400               	retlw	0
+  1200  0BB1  3400               	retlw	0
+  1201  0BB2  3400               	retlw	0
+  1202  0BB3  3400               	retlw	0
+  1203  0BB4  3400               	retlw	0
+  1204  0BB5  3400               	retlw	0
+  1205  0BB6  3400               	retlw	0
+  1206  0BB7  3400               	retlw	0
+  1207  0BB8  3400               	retlw	0
+  1208  0BB9  3400               	retlw	0
+  1209  0BBA  3400               	retlw	0
+  1210  0BBB  3400               	retlw	0
+  1211  0BBC  3400               	retlw	0
+  1212  0BBD  3400               	retlw	0
+  1213  0BBE  3400               	retlw	0
+  1214  0BBF  3400               	retlw	0
+  1215  0BC0  3400               	retlw	0
+  1216  0BC1  3400               	retlw	0
+  1217  0BC2  3400               	retlw	0
+  1218  0BC3  3400               	retlw	0
+  1219  0BC4  3400               	retlw	0
+  1220  0BC5  3400               	retlw	0
+  1221  0BC6  3400               	retlw	0
+  1222  0BC7  3400               	retlw	0
+  1223  0BC8  3400               	retlw	0
+  1224  0BC9  3400               	retlw	0
+  1225  0BCA  3400               	retlw	0
+  1226  0BCB  3400               	retlw	0
+  1227  0BCC  3400               	retlw	0
+  1228  0BCD  3400               	retlw	0
+  1229  0BCE  3400               	retlw	0
+  1230  0BCF  3400               	retlw	0
+  1231  0BD0  3400               	retlw	0
+  1232  0BD1  3400               	retlw	0
+  1233  0BD2  347E               	retlw	126
+  1234  0BD3  3411               	retlw	17
+  1235  0BD4  3411               	retlw	17
+  1236  0BD5  3411               	retlw	17
+  1237  0BD6  347E               	retlw	126
+  1238  0BD7  347F               	retlw	127
+  1239  0BD8  3449               	retlw	73
+  1240  0BD9  3449               	retlw	73
+  1241  0BDA  3449               	retlw	73
+  1242  0BDB  3433               	retlw	51
+  1243  0BDC  347F               	retlw	127
+  1244  0BDD  3449               	retlw	73
+  1245  0BDE  3449               	retlw	73
+  1246  0BDF  3449               	retlw	73
+  1247  0BE0  3436               	retlw	54
+  1248  0BE1  347F               	retlw	127
+  1249  0BE2  3401               	retlw	1
+  1250  0BE3  3401               	retlw	1
+  1251  0BE4  3401               	retlw	1
+  1252  0BE5  3403               	retlw	3
+  1253  0BE6  34E0               	retlw	224
+  1254  0BE7  3451               	retlw	81
+  1255  0BE8  344F               	retlw	79
+  1256  0BE9  3441               	retlw	65
+  1257  0BEA  34FF               	retlw	255
+  1258  0BEB  347F               	retlw	127
+  1259  0BEC  3449               	retlw	73
+  1260  0BED  3449               	retlw	73
+  1261  0BEE  3449               	retlw	73
+  1262  0BEF  3449               	retlw	73
+  1263  0BF0  3477               	retlw	119
+  1264  0BF1  3408               	retlw	8
+  1265  0BF2  347F               	retlw	127
+  1266  0BF3  3408               	retlw	8
+  1267  0BF4  3477               	retlw	119
+  1268  0BF5  3449               	retlw	73
+  1269  0BF6  3449               	retlw	73
+  1270  0BF7  3449               	retlw	73
+  1271  0BF8  3449               	retlw	73
+  1272  0BF9  3436               	retlw	54
+  1273  0BFA  347F               	retlw	127
+  1274  0BFB  3410               	retlw	16
+  1275  0BFC  3408               	retlw	8
+  1276  0BFD  3404               	retlw	4
+  1277  0BFE  347F               	retlw	127
+  1278  0BFF  347C               	retlw	124
+  1279  0C00  3421               	retlw	33
+  1280  0C01  3412               	retlw	18
+  1281  0C02  3409               	retlw	9
+  1282  0C03  347C               	retlw	124
+  1283  0C04  347F               	retlw	127
+  1284  0C05  3408               	retlw	8
+  1285  0C06  3414               	retlw	20
+  1286  0C07  3422               	retlw	34
+  1287  0C08  3441               	retlw	65
+  1288  0C09  3420               	retlw	32
+  1289  0C0A  3441               	retlw	65
+  1290  0C0B  343F               	retlw	63
+  1291  0C0C  3401               	retlw	1
+  1292  0C0D  347F               	retlw	127
+  1293  0C0E  347F               	retlw	127
+  1294  0C0F  3402               	retlw	2
+  1295  0C10  340C               	retlw	12
+  1296  0C11  3402               	retlw	2
+  1297  0C12  347F               	retlw	127
+  1298  0C13  347F               	retlw	127
+  1299  0C14  3408               	retlw	8
+  1300  0C15  3408               	retlw	8
+  1301  0C16  3408               	retlw	8
+  1302  0C17  347F               	retlw	127
+  1303  0C18  343E               	retlw	62
+  1304  0C19  3441               	retlw	65
+  1305  0C1A  3441               	retlw	65
+  1306  0C1B  3441               	retlw	65
+  1307  0C1C  343E               	retlw	62
+  1308  0C1D  347F               	retlw	127
+  1309  0C1E  3401               	retlw	1
+  1310  0C1F  3401               	retlw	1
+  1311  0C20  3401               	retlw	1
+  1312  0C21  347F               	retlw	127
+  1313  0C22  347F               	retlw	127
+  1314  0C23  3409               	retlw	9
+  1315  0C24  3409               	retlw	9
+  1316  0C25  3409               	retlw	9
+  1317  0C26  3406               	retlw	6
+  1318  0C27  343E               	retlw	62
+  1319  0C28  3441               	retlw	65
+  1320  0C29  3441               	retlw	65
+  1321  0C2A  3441               	retlw	65
+  1322  0C2B  3422               	retlw	34
+  1323  0C2C  3401               	retlw	1
+  1324  0C2D  3401               	retlw	1
+  1325  0C2E  347F               	retlw	127
+  1326  0C2F  3401               	retlw	1
+  1327  0C30  3401               	retlw	1
+  1328  0C31  3427               	retlw	39
+  1329  0C32  3448               	retlw	72
+  1330  0C33  3448               	retlw	72
+  1331  0C34  3448               	retlw	72
+  1332  0C35  343F               	retlw	63
+  1333  0C36  341C               	retlw	28
+  1334  0C37  3422               	retlw	34
+  1335  0C38  347F               	retlw	127
+  1336  0C39  3422               	retlw	34
+  1337  0C3A  341C               	retlw	28
+  1338  0C3B  3463               	retlw	99
+  1339  0C3C  3414               	retlw	20
+  1340  0C3D  3408               	retlw	8
+  1341  0C3E  3414               	retlw	20
+  1342  0C3F  3463               	retlw	99
+  1343  0C40  347F               	retlw	127
+  1344  0C41  3440               	retlw	64
+  1345  0C42  3440               	retlw	64
+  1346  0C43  3440               	retlw	64
+  1347  0C44  34FF               	retlw	255
+  1348  0C45  3407               	retlw	7
+  1349  0C46  3408               	retlw	8
+  1350  0C47  3408               	retlw	8
+  1351  0C48  3408               	retlw	8
+  1352  0C49  347F               	retlw	127
+  1353  0C4A  347F               	retlw	127
+  1354  0C4B  3440               	retlw	64
+  1355  0C4C  347F               	retlw	127
+  1356  0C4D  3440               	retlw	64
+  1357  0C4E  347F               	retlw	127
+  1358  0C4F  347F               	retlw	127
+  1359  0C50  3440               	retlw	64
+  1360  0C51  347F               	retlw	127
+  1361  0C52  3440               	retlw	64
+  1362  0C53  34FF               	retlw	255
+  1363  0C54  3401               	retlw	1
+  1364  0C55  347F               	retlw	127
+  1365  0C56  3448               	retlw	72
+  1366  0C57  3448               	retlw	72
+  1367  0C58  3430               	retlw	48
+  1368  0C59  347F               	retlw	127
+  1369  0C5A  3448               	retlw	72
+  1370  0C5B  3430               	retlw	48
+  1371  0C5C  3400               	retlw	0
+  1372  0C5D  347F               	retlw	127
+  1373  0C5E  347F               	retlw	127
+  1374  0C5F  3448               	retlw	72
+  1375  0C60  3448               	retlw	72
+  1376  0C61  3430               	retlw	48
+  1377  0C62  3400               	retlw	0
+  1378  0C63  3422               	retlw	34
+  1379  0C64  3441               	retlw	65
+  1380  0C65  3449               	retlw	73
+  1381  0C66  3449               	retlw	73
+  1382  0C67  343E               	retlw	62
+  1383  0C68  347F               	retlw	127
+  1384  0C69  3408               	retlw	8
+  1385  0C6A  343E               	retlw	62
+  1386  0C6B  3441               	retlw	65
+  1387  0C6C  343E               	retlw	62
+  1388  0C6D  3446               	retlw	70
+  1389  0C6E  3429               	retlw	41
+  1390  0C6F  3419               	retlw	25
+  1391  0C70  3409               	retlw	9
+  1392  0C71  347F               	retlw	127
+  1393  0C72  3420               	retlw	32
+  1394  0C73  3454               	retlw	84
+  1395  0C74  3454               	retlw	84
+  1396  0C75  3454               	retlw	84
+  1397  0C76  3478               	retlw	120
+  1398  0C77  343C               	retlw	60
+  1399  0C78  344A               	retlw	74
+  1400  0C79  344A               	retlw	74
+  1401  0C7A  3449               	retlw	73
+  1402  0C7B  3431               	retlw	49
+  1403  0C7C  347C               	retlw	124
+  1404  0C7D  3454               	retlw	84
+  1405  0C7E  3454               	retlw	84
+  1406  0C7F  3428               	retlw	40
+  1407  0C80  3400               	retlw	0
+  1408  0C81  347C               	retlw	124
+  1409  0C82  3404               	retlw	4
+  1410  0C83  3404               	retlw	4
+  1411  0C84  3404               	retlw	4
+  1412  0C85  340C               	retlw	12
+  1413  0C86  34E0               	retlw	224
+  1414  0C87  3454               	retlw	84
+  1415  0C88  344C               	retlw	76
+  1416  0C89  3444               	retlw	68
+  1417  0C8A  34FC               	retlw	252
+  1418  0C8B  3438               	retlw	56
+  1419  0C8C  3454               	retlw	84
+  1420  0C8D  3454               	retlw	84
+  1421  0C8E  3454               	retlw	84
+  1422  0C8F  3408               	retlw	8
+  1423  0C90  346C               	retlw	108
+  1424  0C91  3410               	retlw	16
+  1425  0C92  347C               	retlw	124
+  1426  0C93  3410               	retlw	16
+  1427  0C94  346C               	retlw	108
+  1428  0C95  3444               	retlw	68
+  1429  0C96  3444               	retlw	68
+  1430  0C97  3454               	retlw	84
+  1431  0C98  3454               	retlw	84
+  1432  0C99  3428               	retlw	40
+  1433  0C9A  347C               	retlw	124
+  1434  0C9B  3420               	retlw	32
+  1435  0C9C  3410               	retlw	16
+  1436  0C9D  3408               	retlw	8
+  1437  0C9E  347C               	retlw	124
+  1438  0C9F  3478               	retlw	120
+  1439  0CA0  3442               	retlw	66
+  1440  0CA1  3424               	retlw	36
+  1441  0CA2  3412               	retlw	18
+  1442  0CA3  3478               	retlw	120
+  1443  0CA4  347C               	retlw	124
+  1444  0CA5  3410               	retlw	16
+  1445  0CA6  3428               	retlw	40
+  1446  0CA7  3444               	retlw	68
+  1447  0CA8  3400               	retlw	0
+  1448  0CA9  3420               	retlw	32
+  1449  0CAA  3444               	retlw	68
+  1450  0CAB  343C               	retlw	60
+  1451  0CAC  3404               	retlw	4
+  1452  0CAD  347C               	retlw	124
+  1453  0CAE  347C               	retlw	124
+  1454  0CAF  3408               	retlw	8
+  1455  0CB0  3410               	retlw	16
+  1456  0CB1  3408               	retlw	8
+  1457  0CB2  347C               	retlw	124
+  1458  0CB3  347C               	retlw	124
+  1459  0CB4  3410               	retlw	16
+  1460  0CB5  3410               	retlw	16
+  1461  0CB6  3410               	retlw	16
+  1462  0CB7  347C               	retlw	124
+  1463  0CB8  3438               	retlw	56
+  1464  0CB9  3444               	retlw	68
+  1465  0CBA  3444               	retlw	68
+  1466  0CBB  3444               	retlw	68
+  1467  0CBC  3438               	retlw	56
+  1468  0CBD  347C               	retlw	124
+  1469  0CBE  3404               	retlw	4
+  1470  0CBF  3404               	retlw	4
+  1471  0CC0  3404               	retlw	4
+  1472  0CC1  347C               	retlw	124
+  1473  0CC2  347C               	retlw	124
+  1474  0CC3  3414               	retlw	20
+  1475  0CC4  3414               	retlw	20
+  1476  0CC5  3414               	retlw	20
+  1477  0CC6  3408               	retlw	8
+  1478  0CC7  3438               	retlw	56
+  1479  0CC8  3444               	retlw	68
+  1480  0CC9  3444               	retlw	68
+  1481  0CCA  3444               	retlw	68
+  1482  0CCB  3444               	retlw	68
+  1483  0CCC  3404               	retlw	4
+  1484  0CCD  3404               	retlw	4
+  1485  0CCE  347C               	retlw	124
+  1486  0CCF  3404               	retlw	4
+  1487  0CD0  3404               	retlw	4
+  1488  0CD1  340C               	retlw	12
+  1489  0CD2  3450               	retlw	80
+  1490  0CD3  3450               	retlw	80
+  1491  0CD4  3450               	retlw	80
+  1492  0CD5  343C               	retlw	60
+  1493  0CD6  3418               	retlw	24
+  1494  0CD7  3424               	retlw	36
+  1495  0CD8  347E               	retlw	126
+  1496  0CD9  3424               	retlw	36
+  1497  0CDA  3418               	retlw	24
+  1498  0CDB  3444               	retlw	68
+  1499  0CDC  3428               	retlw	40
+  1500  0CDD  3410               	retlw	16
+  1501  0CDE  3428               	retlw	40
+  1502  0CDF  3444               	retlw	68
+  1503  0CE0  347C               	retlw	124
+  1504  0CE1  3440               	retlw	64
+  1505  0CE2  3440               	retlw	64
+  1506  0CE3  3440               	retlw	64
+  1507  0CE4  34FC               	retlw	252
+  1508  0CE5  340C               	retlw	12
+  1509  0CE6  3410               	retlw	16
+  1510  0CE7  3410               	retlw	16
+  1511  0CE8  3410               	retlw	16
+  1512  0CE9  347C               	retlw	124
+  1513  0CEA  347C               	retlw	124
+  1514  0CEB  3440               	retlw	64
+  1515  0CEC  347C               	retlw	124
+  1516  0CED  3440               	retlw	64
+  1517  0CEE  347C               	retlw	124
+  1518  0CEF  347C               	retlw	124
+  1519  0CF0  3440               	retlw	64
+  1520  0CF1  347C               	retlw	124
+  1521  0CF2  3440               	retlw	64
+  1522  0CF3  34FC               	retlw	252
+  1523  0CF4  3404               	retlw	4
+  1524  0CF5  347C               	retlw	124
+  1525  0CF6  3450               	retlw	80
+  1526  0CF7  3450               	retlw	80
+  1527  0CF8  3420               	retlw	32
+  1528  0CF9  347C               	retlw	124
+  1529  0CFA  3450               	retlw	80
+  1530  0CFB  3420               	retlw	32
+  1531  0CFC  3400               	retlw	0
+  1532  0CFD  347C               	retlw	124
+  1533  0CFE  347C               	retlw	124
+  1534  0CFF  3450               	retlw	80
+  1535  0D00  3450               	retlw	80
+  1536  0D01  3420               	retlw	32
+  1537  0D02  3400               	retlw	0
+  1538  0D03  3428               	retlw	40
+  1539  0D04  3444               	retlw	68
+  1540  0D05  3454               	retlw	84
+  1541  0D06  3454               	retlw	84
+  1542  0D07  3438               	retlw	56
+  1543  0D08  347C               	retlw	124
+  1544  0D09  3410               	retlw	16
+  1545  0D0A  3438               	retlw	56
+  1546  0D0B  3444               	retlw	68
+  1547  0D0C  3438               	retlw	56
+  1548  0D0D  3408               	retlw	8
+  1549  0D0E  3454               	retlw	84
+  1550  0D0F  3434               	retlw	52
+  1551  0D10  3414               	retlw	20
+  1552  0D11  347C               	retlw	124
+  1553  0D12                     __end_of_nlcd_Font:	
+  1554  0006                     _PORTBbits	set	6
+  1555  0086                     _TRISBbits	set	134
+  1556                           
+  1557                           ; #config settings
+  1558  0000                     
+  1559                           	psect	cinit
+  1560  07F0                     start_initialization:	
+  1561  07F0                     __initialization:	
+  1562                           
+  1563                           ; Initialize objects allocated to BANK1
+  1564  07F0  1383               	bcf	3,7	;select IRP bank0
+  1565  07F1  30E1               	movlw	low (__pdataBANK1+65)
+  1566  07F2  00FD               	movwf	btemp+-1
+  1567  07F3  3005               	movlw	high __pidataBANK1
+  1568  07F4  00FE               	movwf	btemp
+  1569  07F5  30F6               	movlw	low __pidataBANK1
+  1570  07F6  00FF               	movwf	btemp+1
+  1571  07F7  30A0               	movlw	low __pdataBANK1
+  1572  07F8  0084               	movwf	4
+  1573  07F9  120A  118A  24D5   	fcall	init_ram0
+  1574  07FC                     end_of_initialization:	
+  1575                           ;End of C runtime variable initialization code
+  1576                           
+  1577  07FC                     __end_of__initialization:	
+  1578  07FC  0183               	clrf	3
+  1579  07FD  120A  118A  2DCB   	ljmp	_main	;jump to C main() function
+  1580                           
+  1581                           	psect	dataBANK1
+  1582  00A0                     __pdataBANK1:	
+  1583  00A0                     ste2007_display_driver@F1029:	
+  1584  00A0                     	ds	23
+  1585  00B7                     ste2007_display_driver@F1023:	
+  1586  00B7                     	ds	17
+  1587  00C8                     ste2007_display_driver@F1027:	
+  1588  00C8                     	ds	13
+  1589  00D5                     ste2007_display_driver@F1025:	
+  1590  00D5                     	ds	12
+  1591                           
+  1592                           	psect	inittext
+  1593  04D1                     init_fetch0:	
+  1594                           ;	Called with low address in FSR and high address in W
+  1595                           
+  1596  04D1  087E               	movf	126,w
+  1597  04D2  008A               	movwf	10
+  1598  04D3  087F               	movf	127,w
+  1599  04D4  0082               	movwf	2
+  1600  04D5                     init_ram0:	
+  1601                           ;Called with:
+  1602                           ;	high address of idata address in btemp 
+  1603                           ;	low address of idata address in btemp+1 
+  1604                           ;	low address of data in FSR
+  1605                           ;	high address + 1 of data in btemp-1
+  1606                           
+  1607  04D5  24D1  120A  118A   	fcall	init_fetch0
+  1608  04D8  0080               	movwf	0
+  1609  04D9  0A84               	incf	4,f
+  1610  04DA  0804               	movf	4,w
+  1611  04DB  067D               	xorwf	125,w
+  1612  04DC  1903               	btfsc	3,2
+  1613  04DD  3400               	retlw	0
+  1614  04DE  0AFF               	incf	127,f
+  1615  04DF  1903               	btfsc	3,2
+  1616  04E0  0AFE               	incf	126,f
+  1617  04E1  2CD5               	goto	init_ram0
+  1618                           
+  1619                           	psect	cstackCOMMON
+  1620  0071                     __pcstackCOMMON:	
+  1621  0071                     ?_ste2007_display_driver:	
+  1622  0071                     ?_transmit_command:	
+  1623                           ; 1 bytes @ 0x0
+  1624                           
+  1625  0071                     ??_transmit_command:	
+  1626                           ; 1 bytes @ 0x0
+  1627                           
+  1628  0071                     ?_transmit_data:	
+  1629                           ; 1 bytes @ 0x0
+  1630                           
+  1631  0071                     ??_transmit_data:	
+  1632                           ; 1 bytes @ 0x0
+  1633                           
+  1634  0071                     ?_user_delay:	
+  1635                           ; 1 bytes @ 0x0
+  1636                           
+  1637  0071                     ?_display_symbol:	
+  1638                           ; 1 bytes @ 0x0
+  1639                           
+  1640  0071                     ?_display_symbols_array:	
+  1641                           ; 1 bytes @ 0x0
+  1642                           
+  1643  0071                     ?_main:	
+  1644                           ; 1 bytes @ 0x0
+  1645                           
+  1646  0071                     ?___wmul:	
+  1647                           ; 2 bytes @ 0x0
+  1648                           
+  1649  0071                     transmit_command@command:	
+  1650                           ; 2 bytes @ 0x0
+  1651                           
+  1652  0071                     transmit_data@data:	
+  1653                           ; 1 bytes @ 0x0
+  1654                           
+  1655  0071                     ___wmul@multiplier:	
+  1656                           ; 1 bytes @ 0x0
+  1657                           
+  1658  0071                     user_delay@delay:	
+  1659                           ; 2 bytes @ 0x0
+  1660                           
+  1661                           
+  1662                           ; 4 bytes @ 0x0
+  1663  0071                     	ds	1
+  1664  0072                     transmit_command@i:	
+  1665  0072                     transmit_data@i:	
+  1666                           ; 2 bytes @ 0x1
+  1667                           
+  1668                           
+  1669                           ; 2 bytes @ 0x1
+  1670  0072                     	ds	1
+  1671  0073                     ___wmul@multiplicand:	
+  1672                           
+  1673                           ; 2 bytes @ 0x2
+  1674  0073                     	ds	1
+  1675  0074                     ?_page_and_column_address_set:	
+  1676  0074                     page_and_column_address_set@column:	
+  1677                           ; 1 bytes @ 0x3
+  1678                           
+  1679                           
+  1680                           ; 1 bytes @ 0x3
+  1681  0074                     	ds	1
+  1682  0075                     ??_page_and_column_address_set:	
+  1683  0075                     ??_user_delay:	
+  1684                           ; 1 bytes @ 0x4
+  1685                           
+  1686  0075                     ??___wmul:	
+  1687                           ; 1 bytes @ 0x4
+  1688                           
+  1689  0075                     ___wmul@product:	
+  1690                           ; 1 bytes @ 0x4
+  1691                           
+  1692                           
+  1693                           ; 2 bytes @ 0x4
+  1694  0075                     	ds	2
+  1695  0077                     ??_display_symbol:	
+  1696  0077                     page_and_column_address_set@c0:	
+  1697                           ; 1 bytes @ 0x6
+  1698                           
+  1699                           
+  1700                           ; 2 bytes @ 0x6
+  1701  0077                     	ds	2
+  1702  0079                     page_and_column_address_set@c1:	
+  1703                           
+  1704                           ; 2 bytes @ 0x8
+  1705  0079                     	ds	2
+  1706  007B                     display_symbol@symbol:	
+  1707  007B                     page_and_column_address_set@page:	
+  1708                           ; 1 bytes @ 0xA
+  1709                           
+  1710                           
+  1711                           ; 1 bytes @ 0xA
+  1712  007B                     	ds	1
+  1713  007C                     ??_display_symbols_array:	
+  1714                           
+  1715                           ; 1 bytes @ 0xB
+  1716  007C                     	ds	1
+  1717  007D                     ??_main:	
+  1718                           
+  1719                           ; 1 bytes @ 0xC
+  1720  007D                     	ds	1
+  1721                           
+  1722                           	psect	cstackBANK0
+  1723  0020                     __pcstackBANK0:	
+  1724  0020                     display_symbols_array@i:	
+  1725                           
+  1726                           ; 2 bytes @ 0x0
+  1727  0020                     	ds	2
+  1728  0022                     display_symbols_array@array:	
+  1729                           
+  1730                           ; 1 bytes @ 0x2
+  1731  0022                     	ds	1
+  1732  0023                     ??_ste2007_display_driver:	
+  1733                           
+  1734                           ; 1 bytes @ 0x3
+  1735  0023                     	ds	4
+  1736  0027                     ste2007_display_driver@third_line:	
+  1737                           
+  1738                           ; 23 bytes @ 0x7
+  1739  0027                     	ds	23
+  1740  003E                     ste2007_display_driver@space:	
+  1741                           
+  1742                           ; 17 bytes @ 0x1E
+  1743  003E                     	ds	17
+  1744  004F                     ste2007_display_driver@second_line:	
+  1745                           
+  1746                           ; 13 bytes @ 0x2F
+  1747  004F                     	ds	13
+  1748  005C                     ste2007_display_driver@first_line:	
+  1749                           
+  1750                           ; 12 bytes @ 0x3C
+  1751  005C                     	ds	12
+  1752  0068                     ste2007_display_driver@word:	
+  1753                           
+  1754                           ; 1 bytes @ 0x48
+  1755  0068                     	ds	1
+  1756                           
+  1757                           	psect	maintext
+  1758  05CB                     __pmaintext:	
+  1759 ;;
+  1760 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+  1761 ;;
+  1762 ;; *************** function _main *****************
+  1763 ;; Defined at:
+  1764 ;;		line 19 in file "main.c"
+  1765 ;; Parameters:    Size  Location     Type
+  1766 ;;		None
+  1767 ;; Auto vars:     Size  Location     Type
+  1768 ;;		None
+  1769 ;; Return value:  Size  Location     Type
+  1770 ;;                  2   14[None  ] int 
+  1771 ;; Registers used:
+  1772 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1773 ;; Tracked objects:
+  1774 ;;		On entry : B00/0
+  1775 ;;		On exit  : 0/0
+  1776 ;;		Unchanged: 0/0
+  1777 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1778 ;;      Params:         0       0       0       0       0
+  1779 ;;      Locals:         0       0       0       0       0
+  1780 ;;      Temps:          1       0       0       0       0
+  1781 ;;      Totals:         1       0       0       0       0
+  1782 ;;Total ram usage:        1 bytes
+  1783 ;; Hardware stack levels required when called:    4
+  1784 ;; This function calls:
+  1785 ;;		_page_and_column_address_set
+  1786 ;;		_ste2007_display_driver
+  1787 ;; This function is called by:
+  1788 ;;		Startup code after reset
+  1789 ;; This function uses a non-reentrant model
+  1790 ;;
+  1791                           
+  1792                           
+  1793                           ;psect for function _main
+  1794  05CB                     _main:	
+  1795                           
+  1796                           ;main.c: 22: TRISBbits.TRISB0=0;
+  1797                           
+  1798                           ;incstack = 0
+  1799                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1800  05CB  1683               	bsf	3,5	;RP0=1, select bank1
+  1801  05CC  1303               	bcf	3,6	;RP1=0, select bank1
+  1802  05CD  1006               	bcf	6,0	;volatile
+  1803                           
+  1804                           ;main.c: 23: TRISBbits.TRISB1=0;
+  1805  05CE  1086               	bcf	6,1	;volatile
+  1806                           
+  1807                           ;main.c: 24: TRISBbits.TRISB2=0;
+  1808  05CF  1106               	bcf	6,2	;volatile
+  1809                           
+  1810                           ;main.c: 25: TRISBbits.TRISB3=0;
+  1811  05D0  1186               	bcf	6,3	;volatile
+  1812                           
+  1813                           ;main.c: 26: TRISBbits.TRISB4=0;
+  1814  05D1  1206               	bcf	6,4	;volatile
+  1815                           
+  1816                           ;main.c: 35: PORTBbits.RB0=0;
+  1817  05D2  1283               	bcf	3,5	;RP0=0, select bank0
+  1818  05D3  1303               	bcf	3,6	;RP1=0, select bank0
+  1819  05D4  1006               	bcf	6,0	;volatile
+  1820                           
+  1821                           ;main.c: 36: PORTBbits.RB1=0;
+  1822  05D5  1086               	bcf	6,1	;volatile
+  1823                           
+  1824                           ;main.c: 37: PORTBbits.RB2=0;
+  1825  05D6  1106               	bcf	6,2	;volatile
+  1826                           
+  1827                           ;main.c: 38: PORTBbits.RB3=1;
+  1828  05D7  1586               	bsf	6,3	;volatile
+  1829                           
+  1830                           ;main.c: 39: PORTBbits.RB4=0;
+  1831  05D8  1206               	bcf	6,4	;volatile
+  1832                           
+  1833                           ;main.c: 42: ste2007_display_driver(display_initialization);
+  1834  05D9  3000               	movlw	0
+  1835  05DA  120A  118A  270B  120A  118A  	fcall	_ste2007_display_driver
+  1836                           
+  1837                           ;main.c: 45: ste2007_display_driver(clear_all);
+  1838  05DF  3001               	movlw	1
+  1839  05E0  120A  118A  270B  120A  118A  	fcall	_ste2007_display_driver
+  1840                           
+  1841                           ;main.c: 48: ste2007_display_driver(permanent_words);
+  1842  05E5  3002               	movlw	2
+  1843  05E6  120A  118A  270B  120A  118A  	fcall	_ste2007_display_driver
+  1844                           
+  1845                           ;main.c: 50: page_and_column_address_set(6, 30);
+  1846  05EB  301E               	movlw	30
+  1847  05EC  00FD               	movwf	??_main
+  1848  05ED  087D               	movf	??_main,w
+  1849  05EE  00F4               	movwf	page_and_column_address_set@column
+  1850  05EF  3006               	movlw	6
+  1851  05F0  120A  118A  25A0  120A  118A  	fcall	_page_and_column_address_set
+  1852  05F5                     l15:	
+  1853                           ;main.c: 51: while(1)
+  1854                           
+  1855                           
+  1856                           ;main.c: 52: {
+  1857                           ;main.c: 54: ;
+  1858  05F5  2DF5               	goto	l15
+  1859  05F6                     __end_of_main:	
+  1860                           ;main.c: 55: }
+  1861                           ;main.c: 57: return 0;
+  1862                           ;	Return value of _main is never used
+  1863                           
+  1864                           
+  1865                           	psect	text1
+  1866  070B                     __ptext1:	
+  1867 ;; *************** function _ste2007_display_driver *****************
+  1868 ;; Defined at:
+  1869 ;;		line 85 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  1870 ;; Parameters:    Size  Location     Type
+  1871 ;;  word            1    wreg     enum E989
+  1872 ;; Auto vars:     Size  Location     Type
+  1873 ;;  word            1   72[BANK0 ] enum E989
+  1874 ;;  third_line     23    7[BANK0 ] unsigned char [23]
+  1875 ;;  second_line    13   47[BANK0 ] unsigned char [13]
+  1876 ;;  first_line     12   60[BANK0 ] unsigned char [12]
+  1877 ;;  space          17   30[BANK0 ] unsigned char [17]
+  1878 ;; Return value:  Size  Location     Type
+  1879 ;;                  1    wreg      void 
+  1880 ;; Registers used:
+  1881 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1882 ;; Tracked objects:
+  1883 ;;		On entry : 0/0
+  1884 ;;		On exit  : 0/0
+  1885 ;;		Unchanged: 0/0
+  1886 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1887 ;;      Params:         0       0       0       0       0
+  1888 ;;      Locals:         0      66       0       0       0
+  1889 ;;      Temps:          0       4       0       0       0
+  1890 ;;      Totals:         0      70       0       0       0
+  1891 ;;Total ram usage:       70 bytes
+  1892 ;; Hardware stack levels used:    1
+  1893 ;; Hardware stack levels required when called:    3
+  1894 ;; This function calls:
+  1895 ;;		_display_symbols_array
+  1896 ;;		_page_and_column_address_set
+  1897 ;;		_transmit_command
+  1898 ;;		_user_delay
+  1899 ;; This function is called by:
+  1900 ;;		_main
+  1901 ;; This function uses a non-reentrant model
+  1902 ;;
+  1903                           
+  1904                           
+  1905                           ;psect for function _ste2007_display_driver
+  1906  070B                     _ste2007_display_driver:	
+  1907                           
+  1908                           ;incstack = 0
+  1909                           ; Regs used in _ste2007_display_driver: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cst
+      +                          ack]
+  1910                           ;ste2007_display_driver@word stored from wreg
+  1911  070B  1283               	bcf	3,5	;RP0=0, select bank0
+  1912  070C  1303               	bcf	3,6	;RP1=0, select bank0
+  1913  070D  00E8               	movwf	ste2007_display_driver@word
+  1914                           
+  1915                           ;nokia_1202_ste2007_display_driver.c: 87: if(word==display_initialization)
+  1916  070E  0868               	movf	ste2007_display_driver@word,w
+  1917  070F  1D03               	btfss	3,2
+  1918  0710  2F5F               	goto	l736
+  1919                           
+  1920                           ;nokia_1202_ste2007_display_driver.c: 88: {
+  1921                           ;nokia_1202_ste2007_display_driver.c: 89: PORTBbits.RB0=1;
+  1922  0711  1406               	bsf	6,0	;volatile
+  1923                           
+  1924                           ;nokia_1202_ste2007_display_driver.c: 90: PORTBbits.RB3=0;
+  1925  0712  1186               	bcf	6,3	;volatile
+  1926                           
+  1927                           ;nokia_1202_ste2007_display_driver.c: 91: PORTBbits.RB4=1;
+  1928  0713  1606               	bsf	6,4	;volatile
+  1929                           
+  1930                           ;nokia_1202_ste2007_display_driver.c: 92: user_delay(290);
+  1931  0714  3000               	movlw	0
+  1932  0715  00F4               	movwf	user_delay@delay+3
+  1933  0716  3000               	movlw	0
+  1934  0717  00F3               	movwf	user_delay@delay+2
+  1935  0718  3001               	movlw	1
+  1936  0719  00F2               	movwf	user_delay@delay+1
+  1937  071A  3022               	movlw	34
+  1938  071B  00F1               	movwf	user_delay@delay
+  1939  071C  120A  118A  2503  120A  118A  	fcall	_user_delay
+  1940                           
+  1941                           ;nokia_1202_ste2007_display_driver.c: 94: transmit_command(0xE2);
+  1942  0721  30E2               	movlw	226
+  1943  0722  120A  118A  254E  120A  118A  	fcall	_transmit_command
+  1944                           
+  1945                           ;nokia_1202_ste2007_display_driver.c: 95: user_delay(20);
+  1946  0727  3000               	movlw	0
+  1947  0728  00F4               	movwf	user_delay@delay+3
+  1948  0729  3000               	movlw	0
+  1949  072A  00F3               	movwf	user_delay@delay+2
+  1950  072B  3000               	movlw	0
+  1951  072C  00F2               	movwf	user_delay@delay+1
+  1952  072D  3014               	movlw	20
+  1953  072E  00F1               	movwf	user_delay@delay
+  1954  072F  120A  118A  2503  120A  118A  	fcall	_user_delay
+  1955                           
+  1956                           ;nokia_1202_ste2007_display_driver.c: 96: transmit_command(0xA4);
+  1957  0734  30A4               	movlw	164
+  1958  0735  120A  118A  254E  120A  118A  	fcall	_transmit_command
+  1959                           
+  1960                           ;nokia_1202_ste2007_display_driver.c: 97: user_delay(20);
+  1961  073A  3000               	movlw	0
+  1962  073B  00F4               	movwf	user_delay@delay+3
+  1963  073C  3000               	movlw	0
+  1964  073D  00F3               	movwf	user_delay@delay+2
+  1965  073E  3000               	movlw	0
+  1966  073F  00F2               	movwf	user_delay@delay+1
+  1967  0740  3014               	movlw	20
+  1968  0741  00F1               	movwf	user_delay@delay
+  1969  0742  120A  118A  2503  120A  118A  	fcall	_user_delay
+  1970                           
+  1971                           ;nokia_1202_ste2007_display_driver.c: 98: transmit_command(0x2F);
+  1972  0747  302F               	movlw	47
+  1973  0748  120A  118A  254E  120A  118A  	fcall	_transmit_command
+  1974                           
+  1975                           ;nokia_1202_ste2007_display_driver.c: 99: user_delay(20);
+  1976  074D  3000               	movlw	0
+  1977  074E  00F4               	movwf	user_delay@delay+3
+  1978  074F  3000               	movlw	0
+  1979  0750  00F3               	movwf	user_delay@delay+2
+  1980  0751  3000               	movlw	0
+  1981  0752  00F2               	movwf	user_delay@delay+1
+  1982  0753  3014               	movlw	20
+  1983  0754  00F1               	movwf	user_delay@delay
+  1984  0755  120A  118A  2503  120A  118A  	fcall	_user_delay
+  1985                           
+  1986                           ;nokia_1202_ste2007_display_driver.c: 100: transmit_command(0xAF);
+  1987  075A  30AF               	movlw	175
+  1988  075B  120A  118A  254E   	fcall	_transmit_command
+  1989                           
+  1990                           ;nokia_1202_ste2007_display_driver.c: 101: }
+  1991  075E  0008               	return
+  1992  075F                     l736:	
+  1993                           
+  1994                           ;nokia_1202_ste2007_display_driver.c: 102: else if(word==clear_all)
+  1995  075F  1283               	bcf	3,5	;RP0=0, select bank0
+  1996  0760  1303               	bcf	3,6	;RP1=0, select bank0
+  1997  0761  0368               	decf	ste2007_display_driver@word,w
+  1998  0762  1D03               	btfss	3,2
+  1999  0763  2F85               	goto	l744
+  2000                           
+  2001                           ;nokia_1202_ste2007_display_driver.c: 103: {
+  2002                           ;nokia_1202_ste2007_display_driver.c: 104: char space[17]="                \n";
+  2003  0764  303E               	movlw	ste2007_display_driver@space& (0+255)
+  2004  0765  0084               	movwf	4
+  2005  0766  30B7               	movlw	low ste2007_display_driver@F1023
+  2006  0767  00A3               	movwf	??_ste2007_display_driver
+  2007  0768  0804               	movf	4,w
+  2008  0769  00A4               	movwf	??_ste2007_display_driver+1
+  2009  076A  3011               	movlw	17
+  2010  076B  00A5               	movwf	??_ste2007_display_driver+2
+  2011  076C                     u380:	
+  2012  076C  0823               	movf	??_ste2007_display_driver,w
+  2013  076D  0084               	movwf	4
+  2014  076E  1383               	bcf	3,7	;select IRP bank1
+  2015  076F  0800               	movf	0,w
+  2016  0770  00A6               	movwf	??_ste2007_display_driver+3
+  2017  0771  0AA3               	incf	??_ste2007_display_driver,f
+  2018  0772  0824               	movf	??_ste2007_display_driver+1,w
+  2019  0773  0084               	movwf	4
+  2020  0774  0826               	movf	??_ste2007_display_driver+3,w
+  2021  0775  0080               	movwf	0
+  2022  0776  0AA4               	incf	??_ste2007_display_driver+1,f
+  2023  0777  0BA5               	decfsz	??_ste2007_display_driver+2,f
+  2024  0778  2F6C               	goto	u380
+  2025                           
+  2026                           ;nokia_1202_ste2007_display_driver.c: 105: page_and_column_address_set(0, 0);
+  2027  0779  01F4               	clrf	page_and_column_address_set@column
+  2028  077A  3000               	movlw	0
+  2029  077B  120A  118A  25A0  120A  118A  	fcall	_page_and_column_address_set
+  2030                           
+  2031                           ;nokia_1202_ste2007_display_driver.c: 106: display_symbols_array(space);
+  2032  0780  303E               	movlw	(low (ste2007_display_driver@space| 0))& (0+255)
+  2033  0781  120A  118A  2576   	fcall	_display_symbols_array
+  2034                           
+  2035                           ;nokia_1202_ste2007_display_driver.c: 107: }
+  2036  0784  0008               	return
+  2037  0785                     l744:	
+  2038                           
+  2039                           ;nokia_1202_ste2007_display_driver.c: 108: else if(word==permanent_words)
+  2040  0785  3002               	movlw	2
+  2041  0786  1283               	bcf	3,5	;RP0=0, select bank0
+  2042  0787  1303               	bcf	3,6	;RP1=0, select bank0
+  2043  0788  0668               	xorwf	ste2007_display_driver@word,w
+  2044  0789  1D03               	btfss	3,2
+  2045  078A  0008               	return
+  2046                           
+  2047                           ;nokia_1202_ste2007_display_driver.c: 109: {
+  2048                           ;nokia_1202_ste2007_display_driver.c: 110: char first_line[]="First_line\n";
+  2049  078B  305C               	movlw	ste2007_display_driver@first_line& (0+255)
+  2050  078C  0084               	movwf	4
+  2051  078D  30D5               	movlw	low ste2007_display_driver@F1025
+  2052  078E  00A3               	movwf	??_ste2007_display_driver
+  2053  078F  0804               	movf	4,w
+  2054  0790  00A4               	movwf	??_ste2007_display_driver+1
+  2055  0791  300C               	movlw	12
+  2056  0792  00A5               	movwf	??_ste2007_display_driver+2
+  2057  0793                     u400:	
+  2058  0793  0823               	movf	??_ste2007_display_driver,w
+  2059  0794  0084               	movwf	4
+  2060  0795  1383               	bcf	3,7	;select IRP bank1
+  2061  0796  0800               	movf	0,w
+  2062  0797  00A6               	movwf	??_ste2007_display_driver+3
+  2063  0798  0AA3               	incf	??_ste2007_display_driver,f
+  2064  0799  0824               	movf	??_ste2007_display_driver+1,w
+  2065  079A  0084               	movwf	4
+  2066  079B  0826               	movf	??_ste2007_display_driver+3,w
+  2067  079C  0080               	movwf	0
+  2068  079D  0AA4               	incf	??_ste2007_display_driver+1,f
+  2069  079E  0BA5               	decfsz	??_ste2007_display_driver+2,f
+  2070  079F  2F93               	goto	u400
+  2071                           
+  2072                           ;nokia_1202_ste2007_display_driver.c: 111: char second_line[]="Second_line\n";
+  2073  07A0  304F               	movlw	ste2007_display_driver@second_line& (0+255)
+  2074  07A1  0084               	movwf	4
+  2075  07A2  30C8               	movlw	low ste2007_display_driver@F1027
+  2076  07A3  00A3               	movwf	??_ste2007_display_driver
+  2077  07A4  0804               	movf	4,w
+  2078  07A5  00A4               	movwf	??_ste2007_display_driver+1
+  2079  07A6  300D               	movlw	13
+  2080  07A7  00A5               	movwf	??_ste2007_display_driver+2
+  2081  07A8                     u410:	
+  2082  07A8  0823               	movf	??_ste2007_display_driver,w
+  2083  07A9  0084               	movwf	4
+  2084  07AA  1383               	bcf	3,7	;select IRP bank1
+  2085  07AB  0800               	movf	0,w
+  2086  07AC  00A6               	movwf	??_ste2007_display_driver+3
+  2087  07AD  0AA3               	incf	??_ste2007_display_driver,f
+  2088  07AE  0824               	movf	??_ste2007_display_driver+1,w
+  2089  07AF  0084               	movwf	4
+  2090  07B0  0826               	movf	??_ste2007_display_driver+3,w
+  2091  07B1  0080               	movwf	0
+  2092  07B2  0AA4               	incf	??_ste2007_display_driver+1,f
+  2093  07B3  0BA5               	decfsz	??_ste2007_display_driver+2,f
+  2094  07B4  2FA8               	goto	u410
+  2095                           
+  2096                           ;nokia_1202_ste2007_display_driver.c: 112: char third_line[]="Третья нах строка нах\n";
+  2097  07B5  3027               	movlw	ste2007_display_driver@third_line& (0+255)
+  2098  07B6  0084               	movwf	4
+  2099  07B7  30A0               	movlw	low ste2007_display_driver@F1029
+  2100  07B8  00A3               	movwf	??_ste2007_display_driver
+  2101  07B9  0804               	movf	4,w
+  2102  07BA  00A4               	movwf	??_ste2007_display_driver+1
+  2103  07BB  3017               	movlw	23
+  2104  07BC  00A5               	movwf	??_ste2007_display_driver+2
+  2105  07BD                     u420:	
+  2106  07BD  0823               	movf	??_ste2007_display_driver,w
+  2107  07BE  0084               	movwf	4
+  2108  07BF  1383               	bcf	3,7	;select IRP bank1
+  2109  07C0  0800               	movf	0,w
+  2110  07C1  00A6               	movwf	??_ste2007_display_driver+3
+  2111  07C2  0AA3               	incf	??_ste2007_display_driver,f
+  2112  07C3  0824               	movf	??_ste2007_display_driver+1,w
+  2113  07C4  0084               	movwf	4
+  2114  07C5  0826               	movf	??_ste2007_display_driver+3,w
+  2115  07C6  0080               	movwf	0
+  2116  07C7  0AA4               	incf	??_ste2007_display_driver+1,f
+  2117  07C8  0BA5               	decfsz	??_ste2007_display_driver+2,f
+  2118  07C9  2FBD               	goto	u420
+  2119                           
+  2120                           ;nokia_1202_ste2007_display_driver.c: 114: page_and_column_address_set(0, 0);
+  2121  07CA  01F4               	clrf	page_and_column_address_set@column
+  2122  07CB  3000               	movlw	0
+  2123  07CC  120A  118A  25A0  120A  118A  	fcall	_page_and_column_address_set
+  2124                           
+  2125                           ;nokia_1202_ste2007_display_driver.c: 115: display_symbols_array(first_line);
+  2126  07D1  305C               	movlw	(low (ste2007_display_driver@first_line| 0))& (0+255)
+  2127  07D2  120A  118A  2576  120A  118A  	fcall	_display_symbols_array
+  2128                           
+  2129                           ;nokia_1202_ste2007_display_driver.c: 117: page_and_column_address_set(1, 0);
+  2130  07D7  01F4               	clrf	page_and_column_address_set@column
+  2131  07D8  3001               	movlw	1
+  2132  07D9  120A  118A  25A0  120A  118A  	fcall	_page_and_column_address_set
+  2133                           
+  2134                           ;nokia_1202_ste2007_display_driver.c: 118: display_symbols_array(second_line);
+  2135  07DE  304F               	movlw	(low (ste2007_display_driver@second_line| 0))& (0+255)
+  2136  07DF  120A  118A  2576  120A  118A  	fcall	_display_symbols_array
+  2137                           
+  2138                           ;nokia_1202_ste2007_display_driver.c: 120: page_and_column_address_set(2, 0);
+  2139  07E4  01F4               	clrf	page_and_column_address_set@column
+  2140  07E5  3002               	movlw	2
+  2141  07E6  120A  118A  25A0  120A  118A  	fcall	_page_and_column_address_set
+  2142                           
+  2143                           ;nokia_1202_ste2007_display_driver.c: 121: display_symbols_array(third_line);
+  2144  07EB  3027               	movlw	(low (ste2007_display_driver@third_line| 0))& (0+255)
+  2145  07EC  120A  118A  2576   	fcall	_display_symbols_array
+  2146  07EF  0008               	return
+  2147  07F0                     __end_of_ste2007_display_driver:	
+  2148                           
+  2149                           	psect	text2
+  2150  0503                     __ptext2:	
+  2151 ;; *************** function _user_delay *****************
+  2152 ;; Defined at:
+  2153 ;;		line 49 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2154 ;; Parameters:    Size  Location     Type
+  2155 ;;  delay           4    0[COMMON] unsigned long 
+  2156 ;; Auto vars:     Size  Location     Type
+  2157 ;;		None
+  2158 ;; Return value:  Size  Location     Type
+  2159 ;;                  1    wreg      void 
+  2160 ;; Registers used:
+  2161 ;;		wreg
+  2162 ;; Tracked objects:
+  2163 ;;		On entry : 0/0
+  2164 ;;		On exit  : 0/0
+  2165 ;;		Unchanged: 0/0
+  2166 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2167 ;;      Params:         4       0       0       0       0
+  2168 ;;      Locals:         0       0       0       0       0
+  2169 ;;      Temps:          4       0       0       0       0
+  2170 ;;      Totals:         8       0       0       0       0
+  2171 ;;Total ram usage:        8 bytes
+  2172 ;; Hardware stack levels used:    1
+  2173 ;; This function calls:
+  2174 ;;		Nothing
+  2175 ;; This function is called by:
+  2176 ;;		_ste2007_display_driver
+  2177 ;; This function uses a non-reentrant model
+  2178 ;;
+  2179                           
+  2180                           
+  2181                           ;psect for function _user_delay
+  2182  0503                     _user_delay:	
+  2183  0503                     l708:	
+  2184                           ;incstack = 0
+  2185                           ; Regs used in _user_delay: [wreg]
+  2186                           
+  2187  0503  3001               	movlw	1
+  2188  0504  00F5               	movwf	??_user_delay
+  2189  0505  3000               	movlw	0
+  2190  0506  00F6               	movwf	??_user_delay+1
+  2191  0507  3000               	movlw	0
+  2192  0508  00F7               	movwf	??_user_delay+2
+  2193  0509  3000               	movlw	0
+  2194  050A  00F8               	movwf	??_user_delay+3
+  2195  050B  0875               	movf	??_user_delay,w
+  2196  050C  02F1               	subwf	user_delay@delay,f
+  2197  050D  0876               	movf	??_user_delay+1,w
+  2198  050E  1C03               	skipc
+  2199  050F  0F76               	incfsz	??_user_delay+1,w
+  2200  0510  2D12               	goto	u335
+  2201  0511  2D13               	goto	u336
+  2202  0512                     u335:	
+  2203  0512  02F2               	subwf	user_delay@delay+1,f
+  2204  0513                     u336:	
+  2205  0513  0877               	movf	??_user_delay+2,w
+  2206  0514  1C03               	skipc
+  2207  0515  0F77               	incfsz	??_user_delay+2,w
+  2208  0516  2D18               	goto	u337
+  2209  0517  2D19               	goto	u338
+  2210  0518                     u337:	
+  2211  0518  02F3               	subwf	user_delay@delay+2,f
+  2212  0519                     u338:	
+  2213  0519  0878               	movf	??_user_delay+3,w
+  2214  051A  1C03               	skipc
+  2215  051B  0F78               	incfsz	??_user_delay+3,w
+  2216  051C  2D1E               	goto	u339
+  2217  051D  2D1F               	goto	u330
+  2218  051E                     u339:	
+  2219  051E  02F4               	subwf	user_delay@delay+3,f
+  2220  051F                     u330:	
+  2221  051F  0874               	movf	user_delay@delay+3,w
+  2222  0520  0473               	iorwf	user_delay@delay+2,w
+  2223  0521  0472               	iorwf	user_delay@delay+1,w
+  2224  0522  0471               	iorwf	user_delay@delay,w
+  2225  0523  1903               	btfsc	3,2
+  2226  0524  0008               	return
+  2227  0525  2D03               	goto	l708
+  2228  0526                     __end_of_user_delay:	
+  2229                           
+  2230                           	psect	text3
+  2231  05A0                     __ptext3:	
+  2232 ;; *************** function _page_and_column_address_set *****************
+  2233 ;; Defined at:
+  2234 ;;		line 71 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2235 ;; Parameters:    Size  Location     Type
+  2236 ;;  page            1    wreg     unsigned char 
+  2237 ;;  column          1    3[COMMON] unsigned char 
+  2238 ;; Auto vars:     Size  Location     Type
+  2239 ;;  page            1   10[COMMON] unsigned char 
+  2240 ;;  c1              2    8[COMMON] int 
+  2241 ;;  c0              2    6[COMMON] int 
+  2242 ;; Return value:  Size  Location     Type
+  2243 ;;                  1    wreg      void 
+  2244 ;; Registers used:
+  2245 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+  2246 ;; Tracked objects:
+  2247 ;;		On entry : 0/0
+  2248 ;;		On exit  : 0/0
+  2249 ;;		Unchanged: 0/0
+  2250 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2251 ;;      Params:         1       0       0       0       0
+  2252 ;;      Locals:         5       0       0       0       0
+  2253 ;;      Temps:          2       0       0       0       0
+  2254 ;;      Totals:         8       0       0       0       0
+  2255 ;;Total ram usage:        8 bytes
+  2256 ;; Hardware stack levels used:    1
+  2257 ;; Hardware stack levels required when called:    1
+  2258 ;; This function calls:
+  2259 ;;		_transmit_command
+  2260 ;; This function is called by:
+  2261 ;;		_main
+  2262 ;;		_ste2007_display_driver
+  2263 ;; This function uses a non-reentrant model
+  2264 ;;
+  2265                           
+  2266                           
+  2267                           ;psect for function _page_and_column_address_set
+  2268  05A0                     _page_and_column_address_set:	
+  2269                           
+  2270                           ;incstack = 0
+  2271                           ; Regs used in _page_and_column_address_set: [wreg+status,2+status,0+btemp+1+pclath+csta
+      +                          ck]
+  2272                           ;page_and_column_address_set@page stored from wreg
+  2273  05A0  00FB               	movwf	page_and_column_address_set@page
+  2274                           
+  2275                           ;nokia_1202_ste2007_display_driver.c: 74: transmit_command(0xB0|page);
+  2276  05A1  087B               	movf	page_and_column_address_set@page,w
+  2277  05A2  38B0               	iorlw	176
+  2278  05A3  120A  118A  254E  120A  118A  	fcall	_transmit_command
+  2279                           
+  2280                           ;nokia_1202_ste2007_display_driver.c: 79: int c0=((column&70)>>4)|0x10;
+  2281  05A8  0874               	movf	page_and_column_address_set@column,w
+  2282  05A9  00F5               	movwf	??_page_and_column_address_set
+  2283  05AA  3004               	movlw	4
+  2284  05AB                     u325:	
+  2285  05AB  1003               	clrc
+  2286  05AC  0CF5               	rrf	??_page_and_column_address_set,f
+  2287  05AD  3EFF               	addlw	-1
+  2288  05AE  1D03               	skipz
+  2289  05AF  2DAB               	goto	u325
+  2290  05B0  3004               	movlw	4
+  2291  05B1  0575               	andwf	??_page_and_column_address_set,w
+  2292  05B2  00F6               	movwf	??_page_and_column_address_set+1
+  2293  05B3  3010               	movlw	16
+  2294  05B4  0476               	iorwf	??_page_and_column_address_set+1,w
+  2295  05B5  00F7               	movwf	page_and_column_address_set@c0
+  2296  05B6  3000               	movlw	0
+  2297  05B7  00F8               	movwf	page_and_column_address_set@c0+1
+  2298                           
+  2299                           ;nokia_1202_ste2007_display_driver.c: 80: int c1=column&0x0F;
+  2300  05B8  0874               	movf	page_and_column_address_set@column,w
+  2301  05B9  390F               	andlw	15
+  2302  05BA  00F5               	movwf	??_page_and_column_address_set
+  2303  05BB  01F6               	clrf	??_page_and_column_address_set+1
+  2304  05BC  0875               	movf	??_page_and_column_address_set,w
+  2305  05BD  00F9               	movwf	page_and_column_address_set@c1
+  2306  05BE  0876               	movf	??_page_and_column_address_set+1,w
+  2307  05BF  00FA               	movwf	page_and_column_address_set@c1+1
+  2308                           
+  2309                           ;nokia_1202_ste2007_display_driver.c: 81: transmit_command(c0);
+  2310  05C0  0877               	movf	page_and_column_address_set@c0,w
+  2311  05C1  120A  118A  254E  120A  118A  	fcall	_transmit_command
+  2312                           
+  2313                           ;nokia_1202_ste2007_display_driver.c: 82: transmit_command(c1);
+  2314  05C6  0879               	movf	page_and_column_address_set@c1,w
+  2315  05C7  120A  118A  254E   	fcall	_transmit_command
+  2316  05CA  0008               	return
+  2317  05CB                     __end_of_page_and_column_address_set:	
+  2318                           
+  2319                           	psect	text4
+  2320  054E                     __ptext4:	
+  2321 ;; *************** function _transmit_command *****************
+  2322 ;; Defined at:
+  2323 ;;		line 3 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2324 ;; Parameters:    Size  Location     Type
+  2325 ;;  command         1    wreg     unsigned char 
+  2326 ;; Auto vars:     Size  Location     Type
+  2327 ;;  command         1    0[COMMON] unsigned char 
+  2328 ;;  i               2    1[COMMON] int 
+  2329 ;; Return value:  Size  Location     Type
+  2330 ;;                  1    wreg      void 
+  2331 ;; Registers used:
+  2332 ;;		wreg, status,2, btemp+1
+  2333 ;; Tracked objects:
+  2334 ;;		On entry : 0/0
+  2335 ;;		On exit  : 0/0
+  2336 ;;		Unchanged: 0/0
+  2337 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2338 ;;      Params:         0       0       0       0       0
+  2339 ;;      Locals:         3       0       0       0       0
+  2340 ;;      Temps:          0       0       0       0       0
+  2341 ;;      Totals:         3       0       0       0       0
+  2342 ;;Total ram usage:        3 bytes
+  2343 ;; Hardware stack levels used:    1
+  2344 ;; This function calls:
+  2345 ;;		Nothing
+  2346 ;; This function is called by:
+  2347 ;;		_page_and_column_address_set
+  2348 ;;		_ste2007_display_driver
+  2349 ;; This function uses a non-reentrant model
+  2350 ;;
+  2351                           
+  2352                           
+  2353                           ;psect for function _transmit_command
+  2354  054E                     _transmit_command:	
+  2355                           
+  2356                           ;incstack = 0
+  2357                           ; Regs used in _transmit_command: [wreg+status,2+btemp+1]
+  2358                           ;transmit_command@command stored from wreg
+  2359  054E  00F1               	movwf	transmit_command@command
+  2360                           
+  2361                           ;nokia_1202_ste2007_display_driver.c: 5: PORTBbits.RB1=0;
+  2362  054F  1283               	bcf	3,5	;RP0=0, select bank0
+  2363  0550  1303               	bcf	3,6	;RP1=0, select bank0
+  2364  0551  1086               	bcf	6,1	;volatile
+  2365                           
+  2366                           ;nokia_1202_ste2007_display_driver.c: 6: PORTBbits.RB2=0;
+  2367  0552  1106               	bcf	6,2	;volatile
+  2368                           
+  2369                           ;nokia_1202_ste2007_display_driver.c: 7: PORTBbits.RB1=1;
+  2370  0553  1486               	bsf	6,1	;volatile
+  2371                           
+  2372                           ;nokia_1202_ste2007_display_driver.c: 10: PORTBbits.RB1=0;
+  2373  0554  1086               	bcf	6,1	;volatile
+  2374                           
+  2375                           ;nokia_1202_ste2007_display_driver.c: 11: for(int i=0; i<8; i++)
+  2376  0555  01F2               	clrf	transmit_command@i
+  2377  0556  01F3               	clrf	transmit_command@i+1
+  2378  0557                     L1:	
+  2379  0557  0873               	movf	transmit_command@i+1,w
+  2380  0558  3A80               	xorlw	128
+  2381  0559  00FF               	movwf	127
+  2382  055A  3080               	movlw	128
+  2383  055B  027F               	subwf	127,w
+  2384  055C  1D03               	skipz
+  2385  055D  2D60               	goto	u295
+  2386  055E  3008               	movlw	8
+  2387  055F  0272               	subwf	transmit_command@i,w
+  2388  0560                     u295:	
+  2389  0560  1803               	btfsc	3,0
+  2390  0561  0008               	return
+  2391                           
+  2392                           ;nokia_1202_ste2007_display_driver.c: 12: {
+  2393                           ;nokia_1202_ste2007_display_driver.c: 13: if(command&0x80) {PORTBbits.RB2=1;}
+  2394  0562  1FF1               	btfss	transmit_command@command,7
+  2395  0563  2D68               	goto	l27
+  2396  0564  1283               	bcf	3,5	;RP0=0, select bank0
+  2397  0565  1303               	bcf	3,6	;RP1=0, select bank0
+  2398  0566  1506               	bsf	6,2	;volatile
+  2399  0567  2D6B               	goto	l28
+  2400  0568                     l27:	
+  2401                           
+  2402                           ;nokia_1202_ste2007_display_driver.c: 14: else {PORTBbits.RB2=0;}
+  2403  0568  1283               	bcf	3,5	;RP0=0, select bank0
+  2404  0569  1303               	bcf	3,6	;RP1=0, select bank0
+  2405  056A  1106               	bcf	6,2	;volatile
+  2406  056B                     l28:	
+  2407                           
+  2408                           ;nokia_1202_ste2007_display_driver.c: 16: PORTBbits.RB1=1;
+  2409  056B  1486               	bsf	6,1	;volatile
+  2410                           
+  2411                           ;nokia_1202_ste2007_display_driver.c: 17: command<<=1;
+  2412  056C  1003               	clrc
+  2413  056D  0DF1               	rlf	transmit_command@command,f
+  2414                           
+  2415                           ;nokia_1202_ste2007_display_driver.c: 22: PORTBbits.RB1=0;
+  2416  056E  1086               	bcf	6,1	;volatile
+  2417  056F  3001               	movlw	1
+  2418  0570  07F2               	addwf	transmit_command@i,f
+  2419  0571  1803               	skipnc
+  2420  0572  0AF3               	incf	transmit_command@i+1,f
+  2421  0573  3000               	movlw	0
+  2422  0574  07F3               	addwf	transmit_command@i+1,f
+  2423  0575  2D57               	goto	L1
+  2424  0576                     __end_of_transmit_command:	
+  2425                           
+  2426                           	psect	text5
+  2427  0576                     __ptext5:	
+  2428 ;; *************** function _display_symbols_array *****************
+  2429 ;; Defined at:
+  2430 ;;		line 61 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2431 ;; Parameters:    Size  Location     Type
+  2432 ;;  array           1    wreg     PTR unsigned char 
+  2433 ;;		 -> ste2007_display_driver@third_line(23), ste2007_display_driver@second_line(13), ste2007_display_driver@first_line
+      +(12), ste2007_display_driver@space(17), 
+  2434 ;; Auto vars:     Size  Location     Type
+  2435 ;;  array           1    2[BANK0 ] PTR unsigned char 
+  2436 ;;		 -> ste2007_display_driver@third_line(23), ste2007_display_driver@second_line(13), ste2007_display_driver@first_line
+      +(12), ste2007_display_driver@space(17), 
+  2437 ;;  i               2    0[BANK0 ] int 
+  2438 ;; Return value:  Size  Location     Type
+  2439 ;;                  1    wreg      void 
+  2440 ;; Registers used:
+  2441 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  2442 ;; Tracked objects:
+  2443 ;;		On entry : 0/0
+  2444 ;;		On exit  : 0/0
+  2445 ;;		Unchanged: 0/0
+  2446 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2447 ;;      Params:         0       0       0       0       0
+  2448 ;;      Locals:         0       3       0       0       0
+  2449 ;;      Temps:          1       0       0       0       0
+  2450 ;;      Totals:         1       3       0       0       0
+  2451 ;;Total ram usage:        4 bytes
+  2452 ;; Hardware stack levels used:    1
+  2453 ;; Hardware stack levels required when called:    2
+  2454 ;; This function calls:
+  2455 ;;		_display_symbol
+  2456 ;;		_transmit_data
+  2457 ;; This function is called by:
+  2458 ;;		_ste2007_display_driver
+  2459 ;; This function uses a non-reentrant model
+  2460 ;;
+  2461                           
+  2462                           
+  2463                           ;psect for function _display_symbols_array
+  2464  0576                     _display_symbols_array:	
+  2465                           
+  2466                           ;incstack = 0
+  2467                           ; Regs used in _display_symbols_array: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+csta
+      +                          ck]
+  2468                           ;display_symbols_array@array stored from wreg
+  2469  0576  1283               	bcf	3,5	;RP0=0, select bank0
+  2470  0577  1303               	bcf	3,6	;RP1=0, select bank0
+  2471  0578  00A2               	movwf	display_symbols_array@array
+  2472                           
+  2473                           ;nokia_1202_ste2007_display_driver.c: 63: for(int i=0; *(array+i)!='\n'; i++)
+  2474  0579  01A0               	clrf	display_symbols_array@i
+  2475  057A  01A1               	clrf	display_symbols_array@i+1
+  2476  057B                     l718:	
+  2477  057B  0820               	movf	display_symbols_array@i,w
+  2478  057C  0722               	addwf	display_symbols_array@array,w
+  2479  057D  00FC               	movwf	??_display_symbols_array
+  2480  057E  087C               	movf	??_display_symbols_array,w
+  2481  057F  0084               	movwf	4
+  2482  0580  300A               	movlw	10
+  2483  0581  1383               	bcf	3,7	;select IRP bank0
+  2484  0582  0600               	xorwf	0,w
+  2485  0583  1903               	btfsc	3,2
+  2486  0584  0008               	return
+  2487                           
+  2488                           ;nokia_1202_ste2007_display_driver.c: 64: {
+  2489                           ;nokia_1202_ste2007_display_driver.c: 65: display_symbol(*(array+i));
+  2490  0585  0820               	movf	display_symbols_array@i,w
+  2491  0586  0722               	addwf	display_symbols_array@array,w
+  2492  0587  00FC               	movwf	??_display_symbols_array
+  2493  0588  087C               	movf	??_display_symbols_array,w
+  2494  0589  0084               	movwf	4
+  2495  058A  1383               	bcf	3,7	;select IRP bank0
+  2496  058B  0800               	movf	0,w
+  2497  058C  120A  118A  2637  120A  118A  	fcall	_display_symbol
+  2498                           
+  2499                           ;nokia_1202_ste2007_display_driver.c: 66: transmit_data(0x00);
+  2500  0591  3000               	movlw	0
+  2501  0592  120A  118A  2526  120A  118A  	fcall	_transmit_data
+  2502  0597  3001               	movlw	1
+  2503  0598  1283               	bcf	3,5	;RP0=0, select bank0
+  2504  0599  1303               	bcf	3,6	;RP1=0, select bank0
+  2505  059A  07A0               	addwf	display_symbols_array@i,f
+  2506  059B  1803               	skipnc
+  2507  059C  0AA1               	incf	display_symbols_array@i+1,f
+  2508  059D  3000               	movlw	0
+  2509  059E  07A1               	addwf	display_symbols_array@i+1,f
+  2510  059F  2D7B               	goto	l718
+  2511  05A0                     __end_of_display_symbols_array:	
+  2512                           
+  2513                           	psect	text6
+  2514  0637                     __ptext6:	
+  2515 ;; *************** function _display_symbol *****************
+  2516 ;; Defined at:
+  2517 ;;		line 52 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2518 ;; Parameters:    Size  Location     Type
+  2519 ;;  symbol          1    wreg     unsigned char 
+  2520 ;; Auto vars:     Size  Location     Type
+  2521 ;;  symbol          1   10[COMMON] unsigned char 
+  2522 ;; Return value:  Size  Location     Type
+  2523 ;;                  1    wreg      void 
+  2524 ;; Registers used:
+  2525 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  2526 ;; Tracked objects:
+  2527 ;;		On entry : 0/0
+  2528 ;;		On exit  : 0/0
+  2529 ;;		Unchanged: 0/0
+  2530 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2531 ;;      Params:         0       0       0       0       0
+  2532 ;;      Locals:         1       0       0       0       0
+  2533 ;;      Temps:          4       0       0       0       0
+  2534 ;;      Totals:         5       0       0       0       0
+  2535 ;;Total ram usage:        5 bytes
+  2536 ;; Hardware stack levels used:    1
+  2537 ;; Hardware stack levels required when called:    1
+  2538 ;; This function calls:
+  2539 ;;		___wmul
+  2540 ;;		_transmit_data
+  2541 ;; This function is called by:
+  2542 ;;		_display_symbols_array
+  2543 ;; This function uses a non-reentrant model
+  2544 ;;
+  2545                           
+  2546                           
+  2547                           ;psect for function _display_symbol
+  2548  0637                     _display_symbol:	
+  2549                           
+  2550                           ;incstack = 0
+  2551                           ; Regs used in _display_symbol: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  2552                           ;display_symbol@symbol stored from wreg
+  2553  0637  00FB               	movwf	display_symbol@symbol
+  2554                           
+  2555                           ;nokia_1202_ste2007_display_driver.c: 54: transmit_data(nlcd_Font[symbol][0]);
+  2556  0638  087B               	movf	display_symbol@symbol,w
+  2557  0639  00F7               	movwf	??_display_symbol
+  2558  063A  01F8               	clrf	??_display_symbol+1
+  2559  063B  0877               	movf	??_display_symbol,w
+  2560  063C  00F1               	movwf	___wmul@multiplier
+  2561  063D  0878               	movf	??_display_symbol+1,w
+  2562  063E  00F2               	movwf	___wmul@multiplier+1
+  2563  063F  3005               	movlw	5
+  2564  0640  00F3               	movwf	___wmul@multiplicand
+  2565  0641  3000               	movlw	0
+  2566  0642  00F4               	movwf	___wmul@multiplicand+1
+  2567  0643  120A  118A  24E2  120A  118A  	fcall	___wmul
+  2568  0648  3088               	movlw	high (_nlcd_Font| (0+32768))
+  2569  0649  0772               	addwf	?___wmul+1,w
+  2570  064A  1283               	bcf	3,5	;RP0=0, select bank0
+  2571  064B  1303               	bcf	3,6	;RP1=0, select bank0
+  2572  064C  00FF               	movwf	127
+  2573  064D  3012               	movlw	low (_nlcd_Font| (0+32768))
+  2574  064E  0771               	addwf	?___wmul,w
+  2575  064F  0084               	movwf	4
+  2576  0650  1803               	skipnc
+  2577  0651  0AFF               	incf	127,f
+  2578  0652  120A  158A  2000  120A  118A  	fcall	stringtab
+  2579  0657  120A  118A  2526  120A  118A  	fcall	_transmit_data
+  2580                           
+  2581                           ;nokia_1202_ste2007_display_driver.c: 55: transmit_data(nlcd_Font[symbol][1]);
+  2582  065C  087B               	movf	display_symbol@symbol,w
+  2583  065D  00F7               	movwf	??_display_symbol
+  2584  065E  01F8               	clrf	??_display_symbol+1
+  2585  065F  0877               	movf	??_display_symbol,w
+  2586  0660  00F1               	movwf	___wmul@multiplier
+  2587  0661  0878               	movf	??_display_symbol+1,w
+  2588  0662  00F2               	movwf	___wmul@multiplier+1
+  2589  0663  3005               	movlw	5
+  2590  0664  00F3               	movwf	___wmul@multiplicand
+  2591  0665  3000               	movlw	0
+  2592  0666  00F4               	movwf	___wmul@multiplicand+1
+  2593  0667  120A  118A  24E2  120A  118A  	fcall	___wmul
+  2594  066C  0871               	movf	?___wmul,w
+  2595  066D  3E01               	addlw	1
+  2596  066E  00F9               	movwf	??_display_symbol+2
+  2597  066F  0872               	movf	?___wmul+1,w
+  2598  0670  1803               	skipnc
+  2599  0671  3E01               	addlw	1
+  2600  0672  3E00               	addlw	0
+  2601  0673  00FA               	movwf	??_display_symbol+3
+  2602  0674  3088               	movlw	high (_nlcd_Font| (0+32768))
+  2603  0675  077A               	addwf	??_display_symbol+3,w
+  2604  0676  1283               	bcf	3,5	;RP0=0, select bank0
+  2605  0677  1303               	bcf	3,6	;RP1=0, select bank0
+  2606  0678  00FF               	movwf	127
+  2607  0679  3012               	movlw	low (_nlcd_Font| (0+32768))
+  2608  067A  0779               	addwf	??_display_symbol+2,w
+  2609  067B  0084               	movwf	4
+  2610  067C  1803               	skipnc
+  2611  067D  0AFF               	incf	127,f
+  2612  067E  120A  158A  2000  120A  118A  	fcall	stringtab
+  2613  0683  120A  118A  2526  120A  118A  	fcall	_transmit_data
+  2614                           
+  2615                           ;nokia_1202_ste2007_display_driver.c: 56: transmit_data(nlcd_Font[symbol][2]);
+  2616  0688  087B               	movf	display_symbol@symbol,w
+  2617  0689  00F7               	movwf	??_display_symbol
+  2618  068A  01F8               	clrf	??_display_symbol+1
+  2619  068B  0877               	movf	??_display_symbol,w
+  2620  068C  00F1               	movwf	___wmul@multiplier
+  2621  068D  0878               	movf	??_display_symbol+1,w
+  2622  068E  00F2               	movwf	___wmul@multiplier+1
+  2623  068F  3005               	movlw	5
+  2624  0690  00F3               	movwf	___wmul@multiplicand
+  2625  0691  3000               	movlw	0
+  2626  0692  00F4               	movwf	___wmul@multiplicand+1
+  2627  0693  120A  118A  24E2  120A  118A  	fcall	___wmul
+  2628  0698  0871               	movf	?___wmul,w
+  2629  0699  3E02               	addlw	2
+  2630  069A  00F9               	movwf	??_display_symbol+2
+  2631  069B  0872               	movf	?___wmul+1,w
+  2632  069C  1803               	skipnc
+  2633  069D  3E01               	addlw	1
+  2634  069E  3E00               	addlw	0
+  2635  069F  00FA               	movwf	??_display_symbol+3
+  2636  06A0  3088               	movlw	high (_nlcd_Font| (0+32768))
+  2637  06A1  077A               	addwf	??_display_symbol+3,w
+  2638  06A2  1283               	bcf	3,5	;RP0=0, select bank0
+  2639  06A3  1303               	bcf	3,6	;RP1=0, select bank0
+  2640  06A4  00FF               	movwf	127
+  2641  06A5  3012               	movlw	low (_nlcd_Font| (0+32768))
+  2642  06A6  0779               	addwf	??_display_symbol+2,w
+  2643  06A7  0084               	movwf	4
+  2644  06A8  1803               	skipnc
+  2645  06A9  0AFF               	incf	127,f
+  2646  06AA  120A  158A  2000  120A  118A  	fcall	stringtab
+  2647  06AF  120A  118A  2526  120A  118A  	fcall	_transmit_data
+  2648                           
+  2649                           ;nokia_1202_ste2007_display_driver.c: 57: transmit_data(nlcd_Font[symbol][3]);
+  2650  06B4  087B               	movf	display_symbol@symbol,w
+  2651  06B5  00F7               	movwf	??_display_symbol
+  2652  06B6  01F8               	clrf	??_display_symbol+1
+  2653  06B7  0877               	movf	??_display_symbol,w
+  2654  06B8  00F1               	movwf	___wmul@multiplier
+  2655  06B9  0878               	movf	??_display_symbol+1,w
+  2656  06BA  00F2               	movwf	___wmul@multiplier+1
+  2657  06BB  3005               	movlw	5
+  2658  06BC  00F3               	movwf	___wmul@multiplicand
+  2659  06BD  3000               	movlw	0
+  2660  06BE  00F4               	movwf	___wmul@multiplicand+1
+  2661  06BF  120A  118A  24E2  120A  118A  	fcall	___wmul
+  2662  06C4  0871               	movf	?___wmul,w
+  2663  06C5  3E03               	addlw	3
+  2664  06C6  00F9               	movwf	??_display_symbol+2
+  2665  06C7  0872               	movf	?___wmul+1,w
+  2666  06C8  1803               	skipnc
+  2667  06C9  3E01               	addlw	1
+  2668  06CA  3E00               	addlw	0
+  2669  06CB  00FA               	movwf	??_display_symbol+3
+  2670  06CC  3088               	movlw	high (_nlcd_Font| (0+32768))
+  2671  06CD  077A               	addwf	??_display_symbol+3,w
+  2672  06CE  1283               	bcf	3,5	;RP0=0, select bank0
+  2673  06CF  1303               	bcf	3,6	;RP1=0, select bank0
+  2674  06D0  00FF               	movwf	127
+  2675  06D1  3012               	movlw	low (_nlcd_Font| (0+32768))
+  2676  06D2  0779               	addwf	??_display_symbol+2,w
+  2677  06D3  0084               	movwf	4
+  2678  06D4  1803               	skipnc
+  2679  06D5  0AFF               	incf	127,f
+  2680  06D6  120A  158A  2000  120A  118A  	fcall	stringtab
+  2681  06DB  120A  118A  2526  120A  118A  	fcall	_transmit_data
+  2682                           
+  2683                           ;nokia_1202_ste2007_display_driver.c: 58: transmit_data(nlcd_Font[symbol][4]);
+  2684  06E0  087B               	movf	display_symbol@symbol,w
+  2685  06E1  00F7               	movwf	??_display_symbol
+  2686  06E2  01F8               	clrf	??_display_symbol+1
+  2687  06E3  0877               	movf	??_display_symbol,w
+  2688  06E4  00F1               	movwf	___wmul@multiplier
+  2689  06E5  0878               	movf	??_display_symbol+1,w
+  2690  06E6  00F2               	movwf	___wmul@multiplier+1
+  2691  06E7  3005               	movlw	5
+  2692  06E8  00F3               	movwf	___wmul@multiplicand
+  2693  06E9  3000               	movlw	0
+  2694  06EA  00F4               	movwf	___wmul@multiplicand+1
+  2695  06EB  120A  118A  24E2  120A  118A  	fcall	___wmul
+  2696  06F0  0871               	movf	?___wmul,w
+  2697  06F1  3E04               	addlw	4
+  2698  06F2  00F9               	movwf	??_display_symbol+2
+  2699  06F3  0872               	movf	?___wmul+1,w
+  2700  06F4  1803               	skipnc
+  2701  06F5  3E01               	addlw	1
+  2702  06F6  3E00               	addlw	0
+  2703  06F7  00FA               	movwf	??_display_symbol+3
+  2704  06F8  3088               	movlw	high (_nlcd_Font| (0+32768))
+  2705  06F9  077A               	addwf	??_display_symbol+3,w
+  2706  06FA  1283               	bcf	3,5	;RP0=0, select bank0
+  2707  06FB  1303               	bcf	3,6	;RP1=0, select bank0
+  2708  06FC  00FF               	movwf	127
+  2709  06FD  3012               	movlw	low (_nlcd_Font| (0+32768))
+  2710  06FE  0779               	addwf	??_display_symbol+2,w
+  2711  06FF  0084               	movwf	4
+  2712  0700  1803               	skipnc
+  2713  0701  0AFF               	incf	127,f
+  2714  0702  120A  158A  2000  120A  118A  	fcall	stringtab
+  2715  0707  120A  118A  2526   	fcall	_transmit_data
+  2716  070A  0008               	return
+  2717  070B                     __end_of_display_symbol:	
+  2718                           
+  2719                           	psect	text7
+  2720  0526                     __ptext7:	
+  2721 ;; *************** function _transmit_data *****************
+  2722 ;; Defined at:
+  2723 ;;		line 26 in file "../STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c"
+  2724 ;; Parameters:    Size  Location     Type
+  2725 ;;  data            1    wreg     unsigned char 
+  2726 ;; Auto vars:     Size  Location     Type
+  2727 ;;  data            1    0[COMMON] unsigned char 
+  2728 ;;  i               2    1[COMMON] int 
+  2729 ;; Return value:  Size  Location     Type
+  2730 ;;                  1    wreg      void 
+  2731 ;; Registers used:
+  2732 ;;		wreg, status,2, btemp+1
+  2733 ;; Tracked objects:
+  2734 ;;		On entry : 0/0
+  2735 ;;		On exit  : 0/0
+  2736 ;;		Unchanged: 0/0
+  2737 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2738 ;;      Params:         0       0       0       0       0
+  2739 ;;      Locals:         3       0       0       0       0
+  2740 ;;      Temps:          0       0       0       0       0
+  2741 ;;      Totals:         3       0       0       0       0
+  2742 ;;Total ram usage:        3 bytes
+  2743 ;; Hardware stack levels used:    1
+  2744 ;; This function calls:
+  2745 ;;		Nothing
+  2746 ;; This function is called by:
+  2747 ;;		_display_symbol
+  2748 ;;		_display_symbols_array
+  2749 ;; This function uses a non-reentrant model
+  2750 ;;
+  2751                           
+  2752                           
+  2753                           ;psect for function _transmit_data
+  2754  0526                     _transmit_data:	
+  2755                           
+  2756                           ;incstack = 0
+  2757                           ; Regs used in _transmit_data: [wreg+status,2+btemp+1]
+  2758                           ;transmit_data@data stored from wreg
+  2759  0526  00F1               	movwf	transmit_data@data
+  2760                           
+  2761                           ;nokia_1202_ste2007_display_driver.c: 28: PORTBbits.RB1=0;
+  2762  0527  1283               	bcf	3,5	;RP0=0, select bank0
+  2763  0528  1303               	bcf	3,6	;RP1=0, select bank0
+  2764  0529  1086               	bcf	6,1	;volatile
+  2765                           
+  2766                           ;nokia_1202_ste2007_display_driver.c: 29: PORTBbits.RB2=1;
+  2767  052A  1506               	bsf	6,2	;volatile
+  2768                           
+  2769                           ;nokia_1202_ste2007_display_driver.c: 30: PORTBbits.RB1=1;
+  2770  052B  1486               	bsf	6,1	;volatile
+  2771                           
+  2772                           ;nokia_1202_ste2007_display_driver.c: 33: PORTBbits.RB1=0;
+  2773  052C  1086               	bcf	6,1	;volatile
+  2774                           
+  2775                           ;nokia_1202_ste2007_display_driver.c: 34: for(int i=0; i<8; i++)
+  2776  052D  01F2               	clrf	transmit_data@i
+  2777  052E  01F3               	clrf	transmit_data@i+1
+  2778  052F                     L2:	
+  2779  052F  0873               	movf	transmit_data@i+1,w
+  2780  0530  3A80               	xorlw	128
+  2781  0531  00FF               	movwf	127
+  2782  0532  3080               	movlw	128
+  2783  0533  027F               	subwf	127,w
+  2784  0534  1D03               	skipz
+  2785  0535  2D38               	goto	u225
+  2786  0536  3008               	movlw	8
+  2787  0537  0272               	subwf	transmit_data@i,w
+  2788  0538                     u225:	
+  2789  0538  1803               	btfsc	3,0
+  2790  0539  0008               	return
+  2791                           
+  2792                           ;nokia_1202_ste2007_display_driver.c: 35: {
+  2793                           ;nokia_1202_ste2007_display_driver.c: 36: if(data&0x80) {PORTBbits.RB2=1;}
+  2794  053A  1FF1               	btfss	transmit_data@data,7
+  2795  053B  2D40               	goto	l34
+  2796  053C  1283               	bcf	3,5	;RP0=0, select bank0
+  2797  053D  1303               	bcf	3,6	;RP1=0, select bank0
+  2798  053E  1506               	bsf	6,2	;volatile
+  2799  053F  2D43               	goto	l35
+  2800  0540                     l34:	
+  2801                           
+  2802                           ;nokia_1202_ste2007_display_driver.c: 37: else {PORTBbits.RB2=0;}
+  2803  0540  1283               	bcf	3,5	;RP0=0, select bank0
+  2804  0541  1303               	bcf	3,6	;RP1=0, select bank0
+  2805  0542  1106               	bcf	6,2	;volatile
+  2806  0543                     l35:	
+  2807                           
+  2808                           ;nokia_1202_ste2007_display_driver.c: 39: PORTBbits.RB1=1;
+  2809  0543  1486               	bsf	6,1	;volatile
+  2810                           
+  2811                           ;nokia_1202_ste2007_display_driver.c: 40: data<<=1;
+  2812  0544  1003               	clrc
+  2813  0545  0DF1               	rlf	transmit_data@data,f
+  2814                           
+  2815                           ;nokia_1202_ste2007_display_driver.c: 45: PORTBbits.RB1=0;
+  2816  0546  1086               	bcf	6,1	;volatile
+  2817  0547  3001               	movlw	1
+  2818  0548  07F2               	addwf	transmit_data@i,f
+  2819  0549  1803               	skipnc
+  2820  054A  0AF3               	incf	transmit_data@i+1,f
+  2821  054B  3000               	movlw	0
+  2822  054C  07F3               	addwf	transmit_data@i+1,f
+  2823  054D  2D2F               	goto	L2
+  2824  054E                     __end_of_transmit_data:	
+  2825                           
+  2826                           	psect	text8
+  2827  04E2                     __ptext8:	
+  2828 ;; *************** function ___wmul *****************
+  2829 ;; Defined at:
+  2830 ;;		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c"
+  2831 ;; Parameters:    Size  Location     Type
+  2832 ;;  multiplier      2    0[COMMON] unsigned int 
+  2833 ;;  multiplicand    2    2[COMMON] unsigned int 
+  2834 ;; Auto vars:     Size  Location     Type
+  2835 ;;  product         2    4[COMMON] unsigned int 
+  2836 ;; Return value:  Size  Location     Type
+  2837 ;;                  2    0[COMMON] unsigned int 
+  2838 ;; Registers used:
+  2839 ;;		wreg, status,2, status,0
+  2840 ;; Tracked objects:
+  2841 ;;		On entry : 0/0
+  2842 ;;		On exit  : 0/0
+  2843 ;;		Unchanged: 0/0
+  2844 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2845 ;;      Params:         4       0       0       0       0
+  2846 ;;      Locals:         2       0       0       0       0
+  2847 ;;      Temps:          0       0       0       0       0
+  2848 ;;      Totals:         6       0       0       0       0
+  2849 ;;Total ram usage:        6 bytes
+  2850 ;; Hardware stack levels used:    1
+  2851 ;; This function calls:
+  2852 ;;		Nothing
+  2853 ;; This function is called by:
+  2854 ;;		_display_symbol
+  2855 ;; This function uses a non-reentrant model
+  2856 ;;
+  2857                           
+  2858                           
+  2859                           ;psect for function ___wmul
+  2860  04E2                     ___wmul:	
+  2861                           
+  2862                           ;incstack = 0
+  2863                           ; Regs used in ___wmul: [wreg+status,2+status,0]
+  2864  04E2  01F5               	clrf	___wmul@product
+  2865  04E3  01F6               	clrf	___wmul@product+1
+  2866  04E4                     l666:	
+  2867  04E4  1C71               	btfss	___wmul@multiplier,0
+  2868  04E5  2CEC               	goto	l154
+  2869  04E6  0873               	movf	___wmul@multiplicand,w
+  2870  04E7  07F5               	addwf	___wmul@product,f
+  2871  04E8  1803               	skipnc
+  2872  04E9  0AF6               	incf	___wmul@product+1,f
+  2873  04EA  0874               	movf	___wmul@multiplicand+1,w
+  2874  04EB  07F6               	addwf	___wmul@product+1,f
+  2875  04EC                     l154:	
+  2876  04EC  3001               	movlw	1
+  2877  04ED                     u265:	
+  2878  04ED  1003               	clrc
+  2879  04EE  0DF3               	rlf	___wmul@multiplicand,f
+  2880  04EF  0DF4               	rlf	___wmul@multiplicand+1,f
+  2881  04F0  3EFF               	addlw	-1
+  2882  04F1  1D03               	skipz
+  2883  04F2  2CED               	goto	u265
+  2884  04F3  3001               	movlw	1
+  2885  04F4                     u275:	
+  2886  04F4  1003               	clrc
+  2887  04F5  0CF2               	rrf	___wmul@multiplier+1,f
+  2888  04F6  0CF1               	rrf	___wmul@multiplier,f
+  2889  04F7  3EFF               	addlw	-1
+  2890  04F8  1D03               	skipz
+  2891  04F9  2CF4               	goto	u275
+  2892  04FA  0871               	movf	___wmul@multiplier,w
+  2893  04FB  0472               	iorwf	___wmul@multiplier+1,w
+  2894  04FC  1D03               	btfss	3,2
+  2895  04FD  2CE4               	goto	l666
+  2896  04FE  0876               	movf	___wmul@product+1,w
+  2897  04FF  00F2               	movwf	?___wmul+1
+  2898  0500  0875               	movf	___wmul@product,w
+  2899  0501  00F1               	movwf	?___wmul
+  2900  0502  0008               	return
+  2901  0503                     __end_of___wmul:	
+  2902  007E                     btemp	set	126	;btemp
+  2903  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    1280
+    Data        65
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           13     13      13
+    BANK0            80     73      73
+    BANK1            80      0      65
+    BANK3            85      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    display_symbols_array@array	PTR unsigned char  size(1) Largest target is 23
+		 -> ste2007_display_driver@third_line(BANK0[23]), ste2007_display_driver@second_line(BANK0[13]), ste2007_display_driver@first_line(BANK0[12]), ste2007_display_driver@space(BANK0[17]), 
+
+
+Critical Paths under _main in COMMON
+
+    _ste2007_display_driver->_display_symbols_array
+    _page_and_column_address_set->_transmit_command
+    _display_symbols_array->_display_symbol
+    _display_symbol->___wmul
+
+Critical Paths under _main in BANK0
+
+    _main->_ste2007_display_driver
+    _ste2007_display_driver->_display_symbols_array
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0    2429
+                                             12 COMMON     1     1      0
+        _page_and_column_address_set
+             _ste2007_display_driver
+ ---------------------------------------------------------------------------------
+ (1) _ste2007_display_driver                              70    70      0    1983
+                                              3 BANK0     70    70      0
+              _display_symbols_array
+        _page_and_column_address_set
+                   _transmit_command
+                         _user_delay
+ ---------------------------------------------------------------------------------
+ (2) _user_delay                                           8     4      4     234
+                                              0 COMMON     8     4      4
+ ---------------------------------------------------------------------------------
+ (2) _page_and_column_address_set                          8     7      1     446
+                                              3 COMMON     8     7      1
+                   _transmit_command
+ ---------------------------------------------------------------------------------
+ (2) _transmit_command                                     3     3      0      69
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (2) _display_symbols_array                                4     4      0    1068
+                                             11 COMMON     1     1      0
+                                              0 BANK0      3     3      0
+                     _display_symbol
+                      _transmit_data
+ ---------------------------------------------------------------------------------
+ (3) _display_symbol                                       5     5      0     801
+                                              6 COMMON     5     5      0
+                             ___wmul
+                      _transmit_data
+ ---------------------------------------------------------------------------------
+ (3) _transmit_data                                        3     3      0      69
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (4) ___wmul                                               6     2      4     622
+                                              0 COMMON     6     2      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _page_and_column_address_set
+     _transmit_command
+   _ste2007_display_driver
+     _display_symbols_array
+       _display_symbol
+         ___wmul
+         _transmit_data
+       _transmit_data
+     _page_and_column_address_set
+       _transmit_command
+     _transmit_command
+     _user_delay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               55      0       0       9        0.0%
+BITBANK3            55      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0      41       7       81.3%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50     49      49       5       91.3%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               D      D       D       1      100.0%
+BITCOMMON            D      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      97      12        0.0%
+ABS                  0      0      97       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Sun May 26 18:34:39 2024
+
+                                   pc 0002                           __CFG_CP$OFF 0000  
+                                  l15 05F5                                    l34 0540  
+                                  l35 0543                                    l27 0568  
+                                  l28 056B                                    fsr 0004  
+                 ___wmul@multiplicand 0073                                   l154 04EC  
+                                 l708 0503                                   l718 057B  
+                                 l744 0785                                   l736 075F  
+                                 l666 04E4                                   u400 0793  
+                                 u225 0538                                   u330 051F  
+                                 u410 07A8                                   u420 07BD  
+                                 u325 05AB                                   u335 0512  
+                                 u336 0513                                   u265 04ED  
+                                 u337 0518                                   u338 0519  
+                        __CFG_CPD$OFF 0000                                   u275 04F4  
+                                 u339 051E                                   u380 076C  
+                                 u295 0560                                   fsr0 0004  
+                                 indf 0000                          __CFG_FOSC$HS 0000  
+              __end_of_display_symbol 070B                          __CFG_LVP$OFF 0000  
+                        __CFG_WRT$OFF 0000                                  _main 05CB  
+                                btemp 007E         page_and_column_address_set@c0 0077  
+       page_and_column_address_set@c1 0079                                  start 0001  
+                display_symbol@symbol 007B       __size_of_ste2007_display_driver 00E5  
+          display_symbols_array@array 0022                                 ?_main 0071  
+                       __CFG_WDTE$OFF 0000                         _transmit_data 0526  
+    ste2007_display_driver@first_line 005C                       ?_display_symbol 0071  
+                      __CFG_BOREN$OFF 0000                                 pclath 000A  
+                               status 0003                                 wtemp0 007E  
+                     __initialization 07F0                          __end_of_main 05F6  
+                              ??_main 007D                        ?_transmit_data 0071  
+              _ste2007_display_driver 070B          ?_page_and_column_address_set 0074  
+    ste2007_display_driver@third_line 0027        __size_of_display_symbols_array 002A  
+       __end_of_display_symbols_array 05A0                        __CFG_PWRTE$OFF 0000  
+                              ___wmul 04E2         ??_page_and_column_address_set 0075  
+             __end_of__initialization 07FC                     ?_transmit_command 0071  
+                  ??_transmit_command 0071                        __pcstackCOMMON 0071  
+                        __pidataBANK1 05F6                       ??_transmit_data 0071  
+   ste2007_display_driver@second_line 004F                     transmit_data@data 0071  
+                          __pmaintext 05CB  __size_of_page_and_column_address_set 002B  
+                   transmit_command@i 0072                               ?___wmul 0071  
+                    ??_display_symbol 0077                            __stringtab 0800  
+              display_symbols_array@i 0020            ste2007_display_driver@word 0068  
+                     __size_of___wmul 0021               ?_ste2007_display_driver 0071  
+                             __ptext1 070B                               __ptext2 0503  
+                             __ptext3 05A0                               __ptext4 054E  
+                             __ptext5 0576                               __ptext6 0637  
+                             __ptext7 0526                               __ptext8 04E2  
+                   __end_of_nlcd_Font 0D12                  end_of_initialization 07FC  
+             transmit_command@command 0071                          __pstringtext 0800  
+      __end_of_ste2007_display_driver 07F0                             _PORTBbits 0006  
+                           _TRISBbits 0086     page_and_column_address_set@column 0074  
+                          _user_delay 0503                 _display_symbols_array 0576  
+                      __end_of___wmul 0503             __size_of_transmit_command 0028  
+                     user_delay@delay 0071                   start_initialization 07F0  
+                            ??___wmul 0075                            init_fetch0 04D1  
+                         __pdataBANK1 00A0                 __end_of_transmit_data 054E  
+ __end_of_page_and_column_address_set 05CB           _page_and_column_address_set 05A0  
+                           ___latbits 0002                         __pcstackBANK0 0020  
+              ?_display_symbols_array 0071                           ?_user_delay 0071  
+                           _nlcd_Font 0812                        ___wmul@product 0075  
+                         __stringbase 0812                      _transmit_command 054E  
+                   ___wmul@multiplier 0071                   __size_of_user_delay 0023  
+             __size_of_display_symbol 00D4           ste2007_display_driver@F1023 00B7  
+         ste2007_display_driver@F1025 00D5           ste2007_display_driver@F1027 00C8  
+         ste2007_display_driver@F1029 00A0           ste2007_display_driver@space 003E  
+                  __end_of__stringtab 0812       page_and_column_address_set@page 007B  
+                       __size_of_main 002B                              init_ram0 04D5  
+             ??_display_symbols_array 007C                        transmit_data@i 0072  
+                        ??_user_delay 0075              ??_ste2007_display_driver 0023  
+                           stringcode 080A                    __end_of_user_delay 0526  
+                            stringtab 0800                        _display_symbol 0637  
+            __end_of_transmit_command 0576                __size_of_transmit_data 0028  

@@ -1,0 +1,479 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+cinit CODE 0 7E3 7E3 1D 2
+text1 CODE 0 6D7 6D7 10C 2
+text2 CODE 0 474 474 23 2
+text3 CODE 0 511 511 2B 2
+text4 CODE 0 4BF 4BF 28 2
+text5 CODE 0 4E7 4E7 2A 2
+text6 CODE 0 603 603 D4 2
+text7 CODE 0 497 497 28 2
+text8 CODE 0 453 453 21 2
+maintext CODE 0 572 572 91 2
+cstackCOMMON COMMON 1 70 70 D 1
+cstackBANK0 BANK0 1 20 20 40 1
+inittext CODE 0 442 442 11 2
+stringtext STRCODE 0 800 800 512 2
+idataBANK0 CODE 0 438 438 A 2
+idataBANK1 CODE 0 53C 53C 36 2
+dataBANK0 BANK0 1 60 60 A 1
+dataBANK1 BANK1 1 A0 A0 36 1
+$C:\Users\Pz\AppData\Local\Temp\s31g.obj
+end_init CODE 0 0 0 3 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 6A-6F 1
+RAM D6-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 6A-6F 1
+BANK1 D6-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-437 2
+CONST D12-1FFF 2
+ENTRY 3-437 2
+ENTRY D12-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-437 2
+CODE D12-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7D-7D 1
+EEDATA 2100-21FF 2
+STRCODE 3-437 2
+STRCODE D12-1FFF 2
+STRING 3-437 2
+STRING D12-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+7E3 cinit CODE >1697:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E3 cinit CODE >1700:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E3 cinit CODE >1767:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E4 cinit CODE >1768:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E5 cinit CODE >1769:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E6 cinit CODE >1770:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E7 cinit CODE >1771:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E8 cinit CODE >1772:C:\Users\Pz\AppData\Local\Temp\s31g.
+7E9 cinit CODE >1773:C:\Users\Pz\AppData\Local\Temp\s31g.
+7EA cinit CODE >1774:C:\Users\Pz\AppData\Local\Temp\s31g.
+7EB cinit CODE >1775:C:\Users\Pz\AppData\Local\Temp\s31g.
+7EC cinit CODE >1776:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F1 cinit CODE >1780:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F2 cinit CODE >1781:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F3 cinit CODE >1782:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F4 cinit CODE >1783:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F5 cinit CODE >1784:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F6 cinit CODE >1785:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F7 cinit CODE >1786:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F8 cinit CODE >1787:C:\Users\Pz\AppData\Local\Temp\s31g.
+7F9 cinit CODE >1788:C:\Users\Pz\AppData\Local\Temp\s31g.
+7FC cinit CODE >1794:C:\Users\Pz\AppData\Local\Temp\s31g.
+7FC cinit CODE >1796:C:\Users\Pz\AppData\Local\Temp\s31g.
+7FD cinit CODE >1797:C:\Users\Pz\AppData\Local\Temp\s31g.
+453 text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+453 text8 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+455 text8 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+457 text8 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+45D text8 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+464 text8 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+46B text8 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+46F text8 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+497 text7 CODE >26:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+498 text7 CODE >28:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+49B text7 CODE >29:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+49C text7 CODE >30:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+49D text7 CODE >33:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+49E text7 CODE >34:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4AB text7 CODE >36:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4B1 text7 CODE >37:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4B4 text7 CODE >39:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4B5 text7 CODE >40:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4B7 text7 CODE >45:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4B8 text7 CODE >34:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+603 text6 CODE >52:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+604 text6 CODE >54:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+628 text6 CODE >55:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+654 text6 CODE >56:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+680 text6 CODE >57:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6AC text6 CODE >58:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6D6 text6 CODE >59:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4E7 text5 CODE >61:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4EA text5 CODE >63:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4F6 text5 CODE >65:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+502 text5 CODE >66:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+508 text5 CODE >63:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4BF text4 CODE >3:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4C0 text4 CODE >5:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4C3 text4 CODE >6:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4C4 text4 CODE >7:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4C5 text4 CODE >10:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4C6 text4 CODE >11:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4D3 text4 CODE >13:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4D9 text4 CODE >14:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4DC text4 CODE >16:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4DD text4 CODE >17:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4DF text4 CODE >22:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+4E0 text4 CODE >11:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+511 text3 CODE >71:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+512 text3 CODE >74:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+519 text3 CODE >79:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+529 text3 CODE >80:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+531 text3 CODE >81:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+537 text3 CODE >82:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+53B text3 CODE >83:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+474 text2 CODE >49:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+474 text2 CODE >50:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6D7 text1 CODE >85:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6DA text1 CODE >87:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6DD text1 CODE >89:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6DE text1 CODE >90:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6DF text1 CODE >91:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6E0 text1 CODE >92:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6ED text1 CODE >94:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+6F3 text1 CODE >95:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+700 text1 CODE >96:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+706 text1 CODE >97:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+713 text1 CODE >98:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+719 text1 CODE >99:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+726 text1 CODE >100:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+72A text1 CODE >101:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+72B text1 CODE >102:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+730 text1 CODE >104:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+745 text1 CODE >105:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+74C text1 CODE >106:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+752 text1 CODE >108:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+759 text1 CODE >109:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+75F text1 CODE >111:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+766 text1 CODE >112:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+76C text1 CODE >114:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+773 text1 CODE >115:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+777 text1 CODE >131:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+778 text1 CODE >132:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+77E text1 CODE >134:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+793 text1 CODE >135:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7A8 text1 CODE >136:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7BD text1 CODE >138:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7C4 text1 CODE >139:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7CA text1 CODE >141:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7D1 text1 CODE >142:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7D7 text1 CODE >144:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7DE text1 CODE >145:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+7E2 text1 CODE >149:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X/STE2007_nokia1202_display_driver/nokia_1202_ste2007_display_driver.c
+572 maintext CODE >19:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+572 maintext CODE >22:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+575 maintext CODE >23:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+576 maintext CODE >24:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+577 maintext CODE >25:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+578 maintext CODE >26:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+579 maintext CODE >35:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+57C maintext CODE >36:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+57D maintext CODE >37:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+57E maintext CODE >38:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+57F maintext CODE >39:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+580 maintext CODE >42:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+586 maintext CODE >45:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+58C maintext CODE >48:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+592 maintext CODE >50:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+59C maintext CODE >54:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5AB maintext CODE >56:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5B5 maintext CODE >57:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5C1 maintext CODE >60:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5CB maintext CODE >61:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5D7 maintext CODE >64:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5E1 maintext CODE >65:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5ED maintext CODE >66:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+5FA maintext CODE >54:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\STE2007_nokia display_driver_for video.X\nokia_1202_ste2007_display_driver.X\main.c
+442 inittext CODE >1741:C:\Users\Pz\AppData\Local\Temp\s31g.
+442 inittext CODE >1742:C:\Users\Pz\AppData\Local\Temp\s31g.
+443 inittext CODE >1743:C:\Users\Pz\AppData\Local\Temp\s31g.
+444 inittext CODE >1744:C:\Users\Pz\AppData\Local\Temp\s31g.
+445 inittext CODE >1745:C:\Users\Pz\AppData\Local\Temp\s31g.
+446 inittext CODE >1752:C:\Users\Pz\AppData\Local\Temp\s31g.
+446 inittext CODE >1753:C:\Users\Pz\AppData\Local\Temp\s31g.
+449 inittext CODE >1754:C:\Users\Pz\AppData\Local\Temp\s31g.
+44A inittext CODE >1755:C:\Users\Pz\AppData\Local\Temp\s31g.
+44B inittext CODE >1756:C:\Users\Pz\AppData\Local\Temp\s31g.
+44C inittext CODE >1757:C:\Users\Pz\AppData\Local\Temp\s31g.
+44D inittext CODE >1758:C:\Users\Pz\AppData\Local\Temp\s31g.
+44E inittext CODE >1759:C:\Users\Pz\AppData\Local\Temp\s31g.
+44F inittext CODE >1760:C:\Users\Pz\AppData\Local\Temp\s31g.
+450 inittext CODE >1761:C:\Users\Pz\AppData\Local\Temp\s31g.
+451 inittext CODE >1762:C:\Users\Pz\AppData\Local\Temp\s31g.
+452 inittext CODE >1763:C:\Users\Pz\AppData\Local\Temp\s31g.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 D6 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+ste2007_display_driver@word 5D 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+transmit_data@i 71 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lstringtext 0 0 ABS 0 stringtext -
+main@i 5E 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\Pz\AppData\Local\Temp\s31g.obj
+_main AE4 0 CODE 0 maintext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+start 0 0 CODE 0 init C:\Users\Pz\AppData\Local\Temp\s31g.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_nlcd_Font 1A24 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__end_of_user_delay 92E 0 CODE 0 text2 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\s31g.obj
+transmit_command@i 71 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_nlcd_Font 1024 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@F1024 A0 0 BANK1 1 dataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@F1026 CA 0 BANK1 1 dataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@F1028 B1 0 BANK1 1 dataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@F1030 BE 0 BANK1 1 dataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+ste2007_display_driver@space 4C 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+_numbers_symbols 60 0 BANK0 1 dataBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of___wmul 8E8 0 CODE 0 text8 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+_ste2007_display_driver DAE 0 CODE 0 text1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@first_line 34 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+start_initialization FC6 0 CODE 0 cinit dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@third_line 40 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_display_symbols_array A22 0 CODE 0 text5 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_TRISBbits 86 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_display_symbols_array 9CE 0 CODE 0 text5 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+page_and_column_address_set@c0 76 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+page_and_column_address_set@c1 78 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_display_symbol C06 0 CODE 0 text6 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+transmit_command@command 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Pz\AppData\Local\Temp\s31g.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 1024 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of_user_delay 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+_page_and_column_address_set A22 0 CODE 0 text3 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FC6 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+_transmit_command 97E 0 CODE 0 text4 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Linittext 0 0 ABS 0 inittext -
+_PORTBbits 6 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+page_and_column_address_set@column 73 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+___wmul 8A6 0 CODE 0 text8 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 2008 0 ABS 0 - -
+__S1 D6 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__end_of_display_symbol DAE 0 CODE 0 text6 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+ste2007_display_driver@second_line 27 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lintentry 0 0 CODE 0 intentry -
+__stringtab 1000 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Pz\AppData\Local\Temp\s31g.obj
+__end_of_ste2007_display_driver FC6 0 CODE 0 text1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pdataBANK0 60 0 BANK0 1 dataBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+display_symbols_array@i 20 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+display_symbols_array@array 22 0 BANK0 1 cstackBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pmaintext AE4 0 CODE 0 maintext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_transmit_command 9CE 0 CODE 0 text4 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hinittext 0 0 ABS 0 inittext -
+___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_transmit_data 92E 0 CODE 0 text7 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+transmit_data@data 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of_transmit_command 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+stackhi 0 0 ABS 0 - C:\Users\Pz\AppData\Local\Temp\s31g.obj
+stacklo 0 0 ABS 0 - C:\Users\Pz\AppData\Local\Temp\s31g.obj
+__end_of__stringtab 1024 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+page_and_column_address_set@page 7A 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+init_fetch0 884 0 CODE 0 inittext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+display_symbol@symbol 7A 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__ptext1 DAE 0 CODE 0 text1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext2 8E8 0 CODE 0 text2 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext3 A22 0 CODE 0 text3 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext4 97E 0 CODE 0 text4 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext5 9CE 0 CODE 0 text5 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext6 C06 0 CODE 0 text6 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext7 92E 0 CODE 0 text7 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__ptext8 8A6 0 CODE 0 text8 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of_display_symbols_array 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__pstringtext 1000 0 STRCODE 0 stringtext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__size_of_transmit_data 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pidataBANK0 870 0 CODE 0 idataBANK0 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pidataBANK1 A78 0 CODE 0 idataBANK1 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+__size_of_ste2007_display_driver 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hend_init 6 0 CODE 0 end_init -
+init_ram0 88C 0 CODE 0 inittext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+user_delay@delay 70 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_main C06 0 CODE 0 maintext dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_transmit_data 97E 0 CODE 0 text7 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__size_of_page_and_column_address_set 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__size_of_display_symbol 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__initialization FC6 0 CODE 0 cinit dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__Hstringtext 0 0 ABS 0 stringtext -
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+_user_delay 8E8 0 CODE 0 text2 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+__end_of_page_and_column_address_set A78 0 CODE 0 text3 dist/default/production\nokia_1202_ste2007_display_driver.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7E3 FC6 1D 2
+text1 0 6D7 DAE 10C 2
+text2 0 474 8E8 23 2
+text3 0 511 A22 2B 2
+text4 0 4BF 97E 28 2
+text5 0 4E7 9CE 2A 2
+text6 0 603 C06 D4 2
+text7 0 497 92E 28 2
+text8 0 453 8A6 21 2
+maintext 0 572 AE4 91 2
+cstackCOMMON 1 70 70 D 1
+cstackBANK0 1 20 20 4A 1
+inittext 0 442 884 11 2
+reset_vec 0 0 0 3 2
+stringtext 0 800 1000 512 2
+idataBANK0 0 438 870 A 2
+idataBANK1 0 53C A78 36 2
+dataBANK1 1 A0 A0 36 1
+config 0 2007 400E 1 2
